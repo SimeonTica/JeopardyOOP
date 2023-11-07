@@ -18,7 +18,8 @@ const Game = () => {
                 {r: "un gimnast", id: 4}
             ],
             raspCorect: 3,
-            id: 1
+            id: 1,
+            render: true
         },
         {
             intrebare: "Cine a fost vlad tepes?",
@@ -30,7 +31,8 @@ const Game = () => {
                 {r: "un gimnast", id: 4}
             ],
             raspCorect: 3,
-            id: 2
+            id: 2,
+            render: false
         },
         {
             intrebare: "Cine e vladimir putin?",
@@ -42,7 +44,8 @@ const Game = () => {
                 {r: "un gimnast", id: 4}
             ],
             raspCorect: 1,
-            id: 3
+            id: 3,
+            render: true
         },
         {
             intrebare: "Cum se ajunge pe luna?",
@@ -54,7 +57,8 @@ const Game = () => {
                 {r: "un gimnast", id: 4}
             ],
             raspcorect: 2,
-            id: 4
+            id: 4,
+            render: true
         },
         {
             intrebare: "Care este cea mai rapida masina?",
@@ -66,7 +70,8 @@ const Game = () => {
                 {r: "mclaren", id: 4}
             ],
             raspCorect: 1,
-            id: 5
+            id: 5,
+            render: false
         },
         {
             intrebare: "Cine a facut aceasta interfata?",
@@ -78,7 +83,8 @@ const Game = () => {
                 {r: "cristi", id: 4}
             ],
             raspCorect: 1,
-            id: 6
+            id: 6,
+            render: true
         }
     ];
 

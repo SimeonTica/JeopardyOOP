@@ -1,17 +1,19 @@
 .card-container{
     display: grid;
     grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-    /* row-gap: 10px;
-    column-gap: 10px; */
 }
 .card{
     text-align: center;
     padding: 60px 20px;
     margin: 100px 10px;
     border-radius: 15px;
-    /* background-color: lightgray; */
     box-shadow: 0 5px 20px lightblue;
     cursor: pointer;
+}
+.no-render{
+    background-color: lightgray;
+    box-shadow: 0 5px 20px lightgray;
+    cursor: default;
 }
 .top-text{
     text-align: center;
