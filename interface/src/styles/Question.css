@@ -1,0 +1,14 @@
+.raspunsuriWrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 220px;
+}
+.raspuns{
+    text-align: center;
+    padding: 60px 20px;
+    margin: 10px;
+    border-radius: 15px;
+    /* background-color: lightgray; */
+    box-shadow: 0 5px 20px lightblue;
+    cursor: pointer;
+}
