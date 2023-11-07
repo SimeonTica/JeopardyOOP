@@ -6,6 +6,7 @@
 }
 .navbar ul{
     list-style-type: none;
+    margin: 0 10px;
 }
 .navbar li{
     display: inline-block;
@@ -14,6 +15,7 @@
 }
 .navbar .color-blue{
     color: #00d2ff;
+    margin: 0 10px;
 }
 .navbar a{
     text-decoration: none;

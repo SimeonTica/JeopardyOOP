@@ -1,16 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Question from "./Question";
 
-const Card = ({setCard, intrebari}) => {
+const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion}) => {
 
-    const navigate = useNavigate();
+    const [question, setQuestion] = useState({});
+
+    // useEffect(() => {
+    //     console.log('asd');
+    // }, [])
 
     return ( 
 
-        intrebari.map(intrebare => (
-        <div className='card' onMouseOver={() => setCard(intrebare.punctaj)} onClick={() => navigate('/game/question', { state: {intrebare: intrebare}})}>{ intrebare.punctaj }</div>
-        ))
+        !renderQuestion ? intrebari.map(intrebare => (
+        <div key={intrebare.id} className='card' onMouseOver={() => setCard(intrebare.punctaj)} onClick={() => {
+            setCard(intrebare.intrebare)
+            setRenderQuestion(true);
+            setQuestion(intrebare);
+        }
+        }>{ intrebare.punctaj }</div>
+        )) : <Question intrebare = { question } setRenderQuestion = { setRenderQuestion } setCard = { setCard }/>
+
         
-     );
+    ); 
 }
  
 export default Card;
