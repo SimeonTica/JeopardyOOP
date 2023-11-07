@@ -1,28 +1,132 @@
 // crow server.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
-#include <iostream>
 #include <crow.h>
+#include <iostream>
 
 int main() {
     crow::SimpleApp app;
 
-    CROW_ROUTE(app, "/hello")
-        ([](const crow::request& req) {
-        return crow::response{"Hello, World!"};
+    struct YourObject {
+        std::string intrebare;
+        std::string punctaj;
+        std::vector<crow::json::wvalue> rasp;
+        int raspCorect;
+        int id;
+        bool render;
+    };
+
+    CROW_ROUTE(app, "/questons")
+        ([]() {
+        // Create a response in JSON format with the array of objects
+        std::vector<YourObject> yourArray = {
+    {
+        "Cine a fost mihai viteazul?",
+        "300$",
+        {
+            { "un conducator al moldovei", 1 },
+            { "un sofer", 2 },
+            { "un conducator al romaniei", 3 },
+            { "un gimnast", 4 }
+        },
+        3,
+        1,
+        true
+    },
+    {
+        "Cine a fost vlad tepes?",
+        "400$",
+        {
+            { "un conducator al moldovei", 1 },
+            { "un sofer", 2 },
+            { "un conducator al romaniei", 3 },
+            { "un gimnast", 4 }
+        },
+        3,
+        2,
+        false
+    },
+    {
+        "Cine e vladimir putin?",
+        "500$",
+        {
+            { "un conducator al rusiei", 1 },
+            { "un sofer", 2 },
+            { "un conducator al romaniei", 3 },
+            { "un gimnast", 4 }
+        },
+        1,
+        3,
+        true
+    },
+    {
+        "Cum se ajunge pe luna?",
+        "600$",
+        {
+            { "cu masina", 1 },
+            { "cu racheta", 2 },
+            { "cu barca", 3 },
+            { "un gimnast", 4 }
+        },
+        2,
+        4,
+        true
+    },
+    {
+        "Care este cea mai rapida masina?",
+        "700$",
+        {
+            { "bugatti", 1 },
+            { "ferrari", 2 },
+            { "dacia", 3 },
+            { "mclaren", 4 }
+        },
+        1,
+        5,
+        false
+    },
+    {
+        "Cine a facut aceasta interfata?",
+        "2000$",
+        {
+            { "simi", 1 },
+            { "adi", 2 },
+            { "vlad", 3 },
+            { "cristi", 4 }
+        },
+        1,
+        6,
+        true
+    }
+        };
+        crow::json::wvalue response(crow::json::type::List);
+
+        for (const YourObject& obj : yourArray) {
+            crow::json::wvalue item;
+            item["intrebare"] = obj.intrebare;
+            item["punctaj"] = obj.punctaj;
+
+            // Create a JSON array for "rasp" and add its elements
+            crow::json::wvalue raspArray(crow::json::type::List);
+            for (const std::string& raspItem : obj.rasp) {
+                crow::json::wvalue r;
+                r = raspItem;
+                raspArray.push_back(r);
+            }
+            item["rasp"] = raspArray;
+
+            item["raspCorect"] = obj.raspCorect;
+            item["id"] = obj.id;
+            item["render"] = obj.render;
+
+            // Add the item directly to the JSON array
+            response.push_back(item);
+        }
+
+        return crow::response(response);
             });
 
+    // Start the Crow server
     app.port(8080).multithreaded().run();
+
     return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
