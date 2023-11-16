@@ -1,0 +1,48 @@
+.homeElement{
+    padding-bottom: 27px;
+    position: relative;
+}
+.logo{
+    margin: auto;
+    padding: 28px 0;
+    text-align: center;
+    z-index: 10;
+}
+.buttonsWrapper{
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 15px;
+    margin: 0 85px;
+    z-index: 5;
+}
+.buttons{
+    display: grid;
+    text-align: center;
+    margin: auto;
+    width: 40%;
+    row-gap: 18px;
+    padding: 60px 0;
+}
+.buttons a{
+    text-decoration: none;
+    padding: 50px 40px;
+    background-image: linear-gradient(to left, #6D1576 , #330066);
+    color: #D0B7F9;
+    font-size: 40px;
+    border-radius: 10px;
+    z-index: 10;
+}
+.upperDots{
+    transform: scale(-0.7);
+    position: absolute;
+    top: -70px;
+    left: -70px;
+    z-index: 1;
+}
+.lowerDots{
+    transform: scale(0.7);
+    position: absolute;
+    bottom: -70px;
+    right: -70px; 
+    z-index: 1;
+}

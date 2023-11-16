@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import Home from './Home';
 import Game from './Game';
 import AboutUs from './AboutUs';
@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='content'>
           <Routes>
             <Route path='/' element={ <Home /> }></Route>

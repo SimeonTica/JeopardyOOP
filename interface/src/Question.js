@@ -1,6 +1,5 @@
 import './styles/Question.css';
 
-
 const Question = ({intrebare, setRenderQuestion, setCard}) => {
 
 const raspunsuri = intrebare.rasp;
