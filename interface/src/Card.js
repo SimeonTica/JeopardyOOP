@@ -6,6 +6,14 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
 
     const [question, setQuestion] = useState(null);
 
+    const setCardtoCategory = (intrebare) => {
+        categories.forEach(category => {
+            if(category.id === intrebare.id % 5){
+                setCard(category.category)       
+            }
+        });
+    }
+
     return ( 
 
         <div>
@@ -13,13 +21,13 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
                 <div className="card-container buttonsWrapper">
                     {[ <Category key='0' categories = { categories }/>,
                         intrebari.map(intrebare => (intrebare.render ? 
-                        <div key={intrebare.id} className='card' onMouseOver={() => setCard(intrebare.punctaj)} onClick={() => {
-                            setCard(intrebare.intrebare);
+                        <div key={intrebare.id} className='card' onMouseOver={() => setCard("SCORE: " + intrebare.punctaj)} onClick={() => {
+                            setCardtoCategory(intrebare);
                             setRenderQuestion(true);
                             setQuestion(intrebare);
                         }}>{ intrebare.punctaj }</div>
                         :
-                        <div key={intrebare.id} className='card no-render' onMouseOver={() => setCard(intrebare.punctaj)}>{ intrebare.punctaj }</div>
+                        <div key={intrebare.id} className='card no-render' onMouseOver={() => setCard("SCORE: " + intrebare.punctaj)}>{ intrebare.punctaj }</div>
                         )) ]}
                 </div>
                 :

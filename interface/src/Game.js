@@ -3,7 +3,6 @@ import { useState } from 'react';
 import './styles/Game.css';
 import Card from './Card';
 import dots from './images/BgDots.png';
-import Category from './Category';
 
 const Game = () => {
 
@@ -296,31 +295,12 @@ const Game = () => {
         }
     ];
 
-    const renderCards = () => {
-        if(!renderQuestion){
-            return (
-                <div className='card-container buttonsWrapper' >
-                    <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion }/>
-                    <Category categories={ categorii }/>
-                </div>
-            )
-        }
-        else{ 
-
-            return (
-                <div className='buttonsWrapper'>
-                    <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion }/>
-                </div> 
-            )
-        }
-    }
-
     return ( 
         <div>
             <Link className='back-home' to='/'>GO HOME</Link>
             <img className='upperDots' src={ dots } alt="" />
             <img className='lowerDots' src={ dots } alt="" />
-            <div className="top-text">SCORE: { card }</div>
+            <div className="top-text">{ card }</div>
             <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion } categories={ categorii }/>
         </div>
      );
