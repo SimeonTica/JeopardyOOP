@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import logo from './images/Logo.png';
 import dots from './images/BgDots.png';
 import './styles/Home.css';
+import './styles/BasicStyle.css';
 const Home = () => {
     return ( 
         <div className='homeElement'>
@@ -12,9 +13,9 @@ const Home = () => {
             <img className='lowerDots' src={ dots } alt="" />
             <main className='buttonsWrapper'>
                 <nav className='buttons'>
-                <Link to='/game'>PLAY!</Link>
-                <Link>RULES</Link>
-                <Link>CREDITS</Link>
+                <Link to='/game-options'>PLAY!</Link>
+                <Link to='/rules'>RULES</Link>
+                <Link to='/credits'>CREDITS</Link>
                 </nav>
             </main>
         </div>       

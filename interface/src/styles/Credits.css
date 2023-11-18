@@ -1,0 +1,28 @@
+.credits{
+    margin-top: 115px;
+}
+.credits-title{
+    color: #F0A60C;
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0;
+}
+.credits-content{
+    color: #D0B7F9;
+    font-size: 20px;
+    text-align: left;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.credits-content-header{
+    color: #F0A60C;
+    font-size: 20px;
+    text-align: left;
+}
+.credits-back{
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 20%;
+    text-decoration: none;
+}

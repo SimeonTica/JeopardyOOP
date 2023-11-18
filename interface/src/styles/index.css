@@ -6,8 +6,11 @@
   font-family: 'Montserrat', sans-serif;
   color: #333;
 }
-
-.App{
+html{
   background-image: linear-gradient(to right, #6D1576 , #330066);
+  height: 100%;
+  width: 100%;
+}
+.App{
   background-size: cover;
 }

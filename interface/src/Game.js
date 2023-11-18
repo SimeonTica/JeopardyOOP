@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './styles/Game.css';
 import Card from './Card';
+import dots from './images/BgDots.png';
+import Category from './Category';
 
 const Game = () => {
 
@@ -9,100 +12,316 @@ const Game = () => {
 
     const intrebari = [
         {
-            intrebare: "Cine a fost mihai viteazul?",
+            intrebare: "Intrebare?",
             punctaj: "300$",
             rasp:[
-                {r: "un conducator al moldovei", id: 1},
-                {r: "un sofer", id: 2},
-                {r: "un conducator al romaniei", id: 3}, 
-                {r: "un gimnast", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
             raspCorect: 3,
             id: 1,
             render: true
         },
         {
-            intrebare: "Cine a fost vlad tepes?",
+            intrebare: "Intrebare?",
             punctaj: "400$",
             rasp:[
-                {r: "un conducator al moldovei", id: 1},
-                {r: "un sofer", id: 2},
-                {r: "un conducator al romaniei", id: 3}, 
-                {r: "un gimnast", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
             raspCorect: 3,
             id: 2,
             render: false
         },
         {
-            intrebare: "Cine e vladimir putin?",
+            intrebare: "Intrebare?",
             punctaj: "500$",
             rasp:[
-                {r: "un conducator al rusiei", id: 1},
-                {r: "un sofer", id: 2},
-                {r: "un conducator al romaniei", id: 3}, 
-                {r: "un gimnast", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
             raspCorect: 1,
             id: 3,
             render: true
         },
         {
-            intrebare: "Cum se ajunge pe luna?",
+            intrebare: "Intrebare?",
             punctaj: "600$",
             rasp:[
-                {r: "cu masina", id: 1},
-                {r: "cu racheta", id: 2},
-                {r: "cu barca", id: 3}, 
-                {r: "un gimnast", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
             raspcorect: 2,
             id: 4,
             render: true
         },
         {
-            intrebare: "Care este cea mai rapida masina?",
+            intrebare: "Intrebare?",
             punctaj: "700$",
             rasp:[
-                {r: "bugatti", id: 1},
-                {r: "ferrari", id: 2},
-                {r: "dacia", id: 3}, 
-                {r: "mclaren", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
             raspCorect: 1,
             id: 5,
             render: false
         },
         {
-            intrebare: "Cine a facut aceasta interfata?",
-            punctaj: "2000$",
+            intrebare: "Intrebare?",
+            punctaj: "300$",
             rasp:[
-                {r: "simi", id: 1},
-                {r: "adi", id: 2},
-                {r: "vlad", id: 3}, 
-                {r: "cristi", id: 4}
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
             ],
-            raspCorect: 1,
+            raspCorect: 3,
             id: 6,
             render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "400$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 3,
+            id: 7,
+            render: false
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "500$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 8,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "600$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspcorect: 2,
+            id: 9,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "700$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 10,
+            render: false
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "300$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 3,
+            id: 11,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "400$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 3,
+            id: 12,
+            render: false
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "500$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 13,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "600$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspcorect: 2,
+            id: 14,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "700$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 15,
+            render: false
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "300$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 3,
+            id: 16,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "400$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 3,
+            id: 17,
+            render: false
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "500$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 18,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "600$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspcorect: 2,
+            id: 19,
+            render: true
+        },
+        {
+            intrebare: "Intrebare?",
+            punctaj: "700$",
+            rasp:[
+                {r: "raspuns", id: 1},
+                {r: "raspuns", id: 2},
+                {r: "raspuns", id: 3}, 
+                {r: "raspuns", id: 4}
+            ],
+            raspCorect: 1,
+            id: 20,
+            render: false
+        }   
+    ];
+
+    const categorii = [
+        {
+            category: "CATEGORY 1",
+            id: 1
+        },
+        {
+            category: "CATEGORY 2",
+            id: 2
+        },
+        {
+            category: "CATEGORY 3",
+            id: 3
+        },
+        {
+            category: "CATEGORY 4",
+            id: 4
+        },
+        {
+            category: "CATEGORY 5",
+            id: 5
         }
     ];
 
+    const renderCards = () => {
+        if(!renderQuestion){
+            return (
+                <div className='card-container buttonsWrapper' >
+                    <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion }/>
+                    <Category categories={ categorii }/>
+                </div>
+            )
+        }
+        else{ 
+
+            return (
+                <div className='buttonsWrapper'>
+                    <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion }/>
+                </div> 
+            )
+        }
+    }
 
     return ( 
         <div>
-            {/* aici trebuie facut un template care sa incarca el div in functie de fetch ul pe care
-             il facem si cate intrebari avem nu o sa fie asa 
-             plus ca trebuie sa avem un meniu unde sa selectam jucatorii
-             */}
-        <div className="top-text">{ card }</div>
-            {!renderQuestion ? <div className='card-container' >
-                <Card  setCard = { setCard } intrebari = { intrebari } setRenderQuestion= { setRenderQuestion }/>
-            </div>:
-            <div>
-                <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion }/>
-            </div>   
-             }
+            <Link className='back-home' to='/'>GO HOME</Link>
+            <img className='upperDots' src={ dots } alt="" />
+            <img className='lowerDots' src={ dots } alt="" />
+            <div className="top-text">SCORE: { card }</div>
+            <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion } categories={ categorii }/>
         </div>
      );
 }
