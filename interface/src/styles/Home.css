@@ -1,27 +1,66 @@
-.homeElement{
-    padding-bottom: 27px;
-    position: relative;
+@media screen and (max-height: 1440px) {
+ 
+    .homeElement{
+        padding-bottom: 27px;
+    }
+    .logo{
+        scale: 1.4;
+        margin: auto;
+        padding: 80px 0;
+        text-align: center;
+        z-index: 10;
+        max-width: 1440px;
+    }
+    .buttons{
+        display: grid;
+        text-align: center;
+        margin: auto;
+        width: 40%;
+        row-gap: 40px;
+        padding: 80px 0;
+    }
+    .buttons a{
+        text-decoration: none;
+        padding: 100px 40px;
+        background-image: linear-gradient(to left, #6D1576 , #330066);
+        color: #D0B7F9;
+        font-size: 50px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
 }
-.logo{
-    margin: auto;
-    padding: 28px 0;
-    text-align: center;
-    z-index: 10;
+
+@media screen and (max-height: 1080px) {
+ 
+    .homeElement{
+        padding-bottom: 27px;
+    }
+    .logo{
+        scale: 1;
+        margin: auto;
+        padding: 28px 0;
+        text-align: center;
+        z-index: 10;
+        max-width: 1080px;
+    }
+    .buttons{
+        display: grid;
+        text-align: center;
+        margin: auto;
+        width: 40%;
+        row-gap: 18px;
+        padding: 60px 0;
+    }
+    .buttons a{
+        text-decoration: none;
+        padding: 50px 40px;
+        background-image: linear-gradient(to left, #6D1576 , #330066);
+        color: #D0B7F9;
+        font-size: 40px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
 }
-.buttons{
-    display: grid;
-    text-align: center;
-    margin: auto;
-    width: 40%;
-    row-gap: 18px;
-    padding: 60px 0;
-}
-.buttons a{
-    text-decoration: none;
-    padding: 50px 40px;
-    background-image: linear-gradient(to left, #6D1576 , #330066);
-    color: #D0B7F9;
-    font-size: 40px;
-    border-radius: 10px;
-    z-index: 10;
-}
+

@@ -5,8 +5,8 @@ import dots from './images/BgDots.png';
 const Rules = () => {
     return ( 
         <div className="buttonsWrapper rules">
-            <img src={ dots } className="upperDots" />
-            <img src={ dots } className="lowerDots" />
+            <img src={ dots } className="upperDots" alt=''/>
+            <img src={ dots } className="lowerDots" alt=''/>
             <div className="rules-title">
                 Rules
             </div>

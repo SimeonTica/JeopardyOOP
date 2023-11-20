@@ -1,9 +1,23 @@
-.game-options{
-    padding-bottom: 53px;
-    position: relative;
-    padding-top: 55px;
+@media screen and (max-height: 1440px) {
+    
+    .game-options{
+        padding-top: 110px;
+    }
+
+    .back{
+        margin-top: 195px;
+    }
+
 }
 
-.back{
-    margin-top: 150px;
+@media screen and (max-height: 1080px ){
+
+    .game-options{
+        padding-top: 55px;
+    }
+
+    .back{
+        margin-top: 150px;
+    }
+
 }

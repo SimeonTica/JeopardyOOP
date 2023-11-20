@@ -1,37 +1,83 @@
-.card-container{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    padding: 20px;
+@media screen and (max-height: 1440px){
+    
+    .card-container{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        padding: 80px;
+    }
+    .card{
+        text-align: center;
+        background-image: linear-gradient(to left, #6D1576 , #330066);
+        color: #D0B7F9;
+        font-size: 50px;
+        margin: 8px;
+        padding: 66px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .category{
+        color: #F0A60C !important;
+        cursor: default !important;
+        font-size: 40px !important;
+    }
+    .no-render{
+        cursor: default;
+    }
+    .top-text{
+        color: #D0B7F9;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 50px;
+    }
+    .back-home{
+        text-decoration: none;
+        color: #D0B7F9;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
 }
-.card{
-    text-align: center;
-    background-image: linear-gradient(to left, #6D1576 , #330066);
-    color: #D0B7F9;
-    font-size: 30px;
-    margin: 8px;
-    padding: 35px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 10;
-}
-.category{
-    color: #F0A60C !important;
-    cursor: default !important;
-    font-size: 25px !important;
-}
-.no-render{
-    cursor: default;
-}
-.top-text{
-    color: #D0B7F9;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 50px;
-}
-.back-home{
-    text-decoration: none;
-    color: #D0B7F9;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+
+@media screen and (max-height: 1080px) {
+    
+    .card-container{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        padding: 20px;
+    }
+    .card{
+        text-align: center;
+        background-image: linear-gradient(to left, #6D1576 , #330066);
+        color: #D0B7F9;
+        font-size: 30px;
+        margin: 8px;
+        padding: 35px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .category{
+        color: #F0A60C !important;
+        cursor: default !important;
+        font-size: 25px !important;
+    }
+    .no-render{
+        cursor: default;
+    }
+    .top-text{
+        color: #D0B7F9;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 50px;
+    }
+    .back-home{
+        text-decoration: none;
+        color: #D0B7F9;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
 }

@@ -1,27 +1,65 @@
-.rules{
-    margin-top: 35px;
+@media screen and (max-height: 1440px) {
+    
+    .rules{
+        margin-top: 85px;
+    }
+    .rules-title{
+        color: #F0A60C;
+        font-size: 100px;
+        text-align: center;
+        padding: 30px 0;
+    }
+    .rules-content{
+        color: #D0B7F9;
+        font-size: 30px;
+        text-align: left;
+        padding: 80px;
+    }
+    .rules-content-header{
+        color: #F0A60C;
+        font-size: 30px;
+        text-align: left;
+    }
+    .rules-back{
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+        max-width: 20%;
+        text-decoration: none;
+    }
+    
 }
-.rules-title{
-    color: #F0A60C;
-    font-size: 50px;
-    text-align: center;
-    padding: 30px 0;
-}
-.rules-content{
-    color: #D0B7F9;
-    font-size: 20px;
-    text-align: left;
-    padding: 30px;
-}
-.rules-content-header{
-    color: #F0A60C;
-    font-size: 20px;
-    text-align: left;
-}
-.rules-back{
-    display: block;
-    margin: auto;
-    margin-bottom: 30px;
-    max-width: 20%;
-    text-decoration: none;
+
+@media screen and (max-height: 1080px) {
+    
+    .rules{
+        margin-top: 35px;
+    }
+    .rules-title{
+        color: #F0A60C;
+        font-size: 50px;
+        text-align: center;
+        padding: 30px 0;
+        padding-bottom: 22.25px;
+    }
+    .rules-content{
+        color: #D0B7F9;
+        font-size: 20px;
+        text-align: left;
+        padding: 27.25px;
+        padding-bottom: 35px;
+    }
+    .rules-content-header{
+        color: #F0A60C;
+        font-size: 20px;
+        text-align: left;
+    }
+    .rules-back{
+        display: block;
+        margin: auto;
+        margin-bottom: 30px;
+        max-width: 20%;
+        text-decoration: none;
+    }
+
 }
