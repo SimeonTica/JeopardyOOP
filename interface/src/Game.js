@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/Game.css';
 import Card from './Card';
 import dots from './images/BgDots.png';
-
 const Game = () => {
 
     const [card, setCard] = useState('Choose a card');
@@ -295,12 +294,31 @@ const Game = () => {
         }
     ];
 
+    const [data, setData] = useState("No data");
+
+        const fetchData = async () => {
+
+        const response = await fetch('http://localhost:8080');
+        const data = await response.json();
+        console.log(data.message);
+
+        setData(data.message);
+};
+
+
+useEffect(() => {
+
+    fetchData()
+
+}, []);
+
     return ( 
         <div>
             <Link className='back-home' to='/'>GO HOME</Link>
             <img className='upperDots' src={ dots } alt="" />
             <img className='lowerDots' src={ dots } alt="" />
             <div className="top-text">{ card }</div>
+            <div>{data}</div>
             <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion } categories={ categorii }/>
         </div>
      );

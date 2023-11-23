@@ -18,5 +18,13 @@
     <ClCompile Include="crow server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Questions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Questions.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

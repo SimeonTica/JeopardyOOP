@@ -27,7 +27,7 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
                             setQuestion(intrebare);
                         }}>{ intrebare.punctaj }</div>
                         :
-                        <div key={intrebare.id} className='card no-render' onMouseOver={() => setCard("SCORE: " + intrebare.punctaj)}>{ intrebare.punctaj }</div>
+                        <div key={intrebare.id} className='card no-render'>{ intrebare.punctaj }</div>
                         )) ]}
                 </div>
                 :
