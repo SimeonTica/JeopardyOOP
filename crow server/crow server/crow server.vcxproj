@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="crow server.cpp" />
     <ClCompile Include="Questions.cpp" />
+    <ClCompile Include="ReadCSV.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Questions.h" />
+    <ClInclude Include="ReadCSV.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -39,4 +39,4 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
     ); 
 }
  
-export default Card;
+export default Card; 

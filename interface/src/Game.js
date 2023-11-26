@@ -300,9 +300,9 @@ const Game = () => {
 
         const response = await fetch('http://localhost:8080');
         const data = await response.json();
-        console.log(data.message);
+        console.log(data);
 
-        setData(data.message);
+        setData(data);
 };
 
 
@@ -318,7 +318,7 @@ useEffect(() => {
             <img className='upperDots' src={ dots } alt="" />
             <img className='lowerDots' src={ dots } alt="" />
             <div className="top-text">{ card }</div>
-            <div>{data}</div>
+            {/* <div>{data}</div> */}
             <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion } categories={ categorii }/>
         </div>
      );
