@@ -11,39 +11,32 @@ using json = nlohmann::json;
 
 int main() {
 
-    //crow::App<crow::CORSHandler> app;
+    crow::App<crow::CORSHandler> app;
 
     Questions questions;
-    ReadCSV readcsv;
 
-    //readcsv.getDataFromFile(".\\questions\\category 1\\250.csv");
+    questions.extractQuestionsAndCategories();
+    questions.convertQuestions();
+    questions.convertQuestionCategories();
 
-    questions.getQuestions();
+    CROW_ROUTE(app, "/questions")
+        ([&]() {
 
-    /*CROW_ROUTE(app, "/")
-        ([]() {
+        json data = questions.getQuestionsToSend();
 
-        json data;
 
-        json q1 = {
-            { "1", {
-            {"question", "What"},
-            {"answer", "yes"},
-            } }
-        };
-
-        json q2 = {
-            { "2", {
-            {"question", "what2"},
-            {"answer", "yes2"},
-            } }
-        };
-
-        data = json::array({q1, q2});
-
-        return crow::response(data.dump());
+        return crow::response(data.dump(4));
         });
 
-    app.port(8080).multithreaded().run();*/
+    CROW_ROUTE(app, "/categories")
+        ([&]() {
+
+        json data = questions.getCategoriesToSend();
+
+
+        return crow::response(data.dump(4));
+            });
+
+    app.port(8080).multithreaded().run();
     return 0;
 }

@@ -43,7 +43,7 @@ std::string Questions::pickOneQuestion(std::string file) {
 
 }
 
-void Questions::getQuestions() {
+void Questions::extractQuestionsAndCategories() {
 	
     std::vector<int> ans = generateRandomCategories();
 
@@ -71,15 +71,95 @@ void Questions::getQuestions() {
         stringQuestions.push_back(pickOneQuestion(file + "1000.csv"));
     }
 
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 5; i++)
     {
-        std::cout << stringQuestions[i] << std::endl;
+        stringCategories.push_back(categories[ans[i]]);
     }
+}
 
+jsonQuestion Questions::stringToStruct(const std::string line) {
+
+    jsonQuestion q;
+
+    std::stringstream ss(line);
+
+    std::string token;
+
+    std::vector <std::string> columns;
+
+    int i = 0;
+
+    while (std::getline(ss, token, ',')){
+        //std::cout << token << std::endl;
+        columns.push_back(token);
+    }
+    q.intrebare = columns[0];
+    q.punctaj = columns[1];
+    q.rasp.push_back(columns[2]);
+    q.rasp.push_back(columns[3]);
+    q.rasp.push_back(columns[4]);
+    q.rasp.push_back(columns[5]);
+    q.raspCorect = columns[6];
+    q.id = std::to_string(questionCount);
+    q.render = columns[8];
+
+    questionCount++;
+
+    return q;
+
+}
+
+json Questions::to_json(const jsonQuestion &q) {
+
+    json j = {
+            {"intrebare", q.intrebare},
+            {"punctaj", q.punctaj},
+            {"rasp", {
+                {{"r", q.rasp[0]}, {"id", 1}},
+                {{"r", q.rasp[1]}, {"id", 2}},
+                {{"r", q.rasp[2]}, {"id", 3}},
+                {{"r", q.rasp[3]}, {"id", 4}}
+            }},
+            {"raspCorect", q.raspCorect},
+            {"id", q.id},
+            {"render", q.render}
+        };
+
+    return j;
 }
 
 void Questions::convertQuestions() {
 
+    std::vector<json> jsonVector;
 
+    for (int i = 0; i < stringQuestions.size(); i++)
+    {
+        jsonVector.push_back(to_json(stringToStruct(stringQuestions[i])));
+    }
+
+    questionsToSend = jsonVector;
+}
+
+void Questions::convertQuestionCategories() {
+
+    std::vector<json> jsonVector;
+
+    for (int i = 0; i < stringCategories.size(); i++)
+    {
+        jsonVector.push_back({ {"category", stringCategories[i]}, {"id", i + 1}});
+    }
+
+    questionCategories = jsonVector;
+}
+
+json Questions::getQuestionsToSend() {
+
+    return questionsToSend;
+
+}
+
+json Questions::getCategoriesToSend() {
+
+    return questionCategories;
 
 }

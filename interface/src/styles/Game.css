@@ -1,5 +1,11 @@
 @media screen and (max-height: 1440px){
     
+    .loading{
+        text-align: center;
+        font-size: 100px;
+        color: #F0A60C;
+        margin: 500px auto;
+    }
     .card-container{
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
@@ -42,6 +48,12 @@
 
 @media screen and (max-height: 1080px) {
     
+    .loading{
+        text-align: center;
+        font-size: 100px;
+        color: #F0A60C;
+        margin: 280px auto;
+    }
     .card-container{
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
