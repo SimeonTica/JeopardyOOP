@@ -14,6 +14,7 @@ struct jsonQuestion {
 	std::string raspCorect;
 	std::string id;
 	std::string render;
+	std::string correct;
 
 };
 
@@ -32,11 +33,16 @@ private:
 	std::vector<int> generateRandomCategories();
 	int generateRandomNumberInInterval(int a, int b);
 	std::string pickOneQuestion(std::string file);
-	jsonQuestion stringToStruct(std::string line);
+	std::string StructToString(jsonQuestion q);
 	json to_json(const jsonQuestion& q);
+	jsonQuestion from_json(const json& j);
+	jsonQuestion stringToStruct(std::string line);
 
 public:
+	friend class Game;
+	friend class Singleplayer;
 
+	void changeQuestionWithClientResponse(const json& q);
 	void extractQuestionsAndCategories();
 	void convertQuestions();
 	void convertQuestionCategories();

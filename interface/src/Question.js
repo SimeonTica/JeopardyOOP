@@ -1,19 +1,31 @@
+import { useEffect, useState } from 'react';
 import './styles/Question.css';
+import Answer from './Answer';
 
-const Question = ({intrebare, setRenderQuestion, setCard}) => {
+const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished}) => {
+
+    const [answered, setAnswered] = useState(false);
 
     const raspunsuri = intrebare.rasp;
-
-    return ( 
-        <div>
-            <div className='card points'>{ intrebare.punctaj }</div>
-            <div className='intrebare'>{ intrebare.intrebare }</div>
-            <div className='raspunsuriWrapper'>
-                { raspunsuri.map(rasp => (
-                    <div key={ rasp.id } className="raspuns" 
-                    onClick={() => {setRenderQuestion(false); setCard('Choose a card')}}>{ rasp.r }</div>)) }
+    return (
+        !answered ?
+            <div>
+                <div className='card points'>{ intrebare.punctaj }</div>
+                <div className='intrebare'>{ intrebare.intrebare }</div>
+                <div className='raspunsuriWrapper'>
+                    { raspunsuri.map(rasp => (
+                        <div key={ rasp.id } className="raspuns" 
+                        onClick={() => {
+                            setAnswered(true);
+                            if(intrebare.raspCorect === rasp.r)
+                            {
+                                intrebare.correct = "TRUE";
+                            }
+                            }}>{ rasp.r }</div>)) }
+                </div>
             </div>
-        </div>
+        :
+            <Answer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished }/>
      );
 }
  

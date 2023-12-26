@@ -4,6 +4,7 @@ const useFetch = (link) => {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     useEffect(() => {
     
         fetch(link)
@@ -12,10 +13,13 @@ const useFetch = (link) => {
                 setData(d);
                 setLoading(false);
             })
+            .catch(e => {
+                setError(e);
+            });
     
-    }, []);
+    }, [link]);
     
-    return {data, loading};
+    return {data, loading, error};
 };
 
 

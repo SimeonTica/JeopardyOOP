@@ -1,0 +1,13 @@
+.ans{
+    text-align: center;
+    font-size: 50px;
+    color: #D0B7F9;
+    display: block;
+    margin-top: 200px; 
+    margin-bottom: 150px; 
+}
+.buttons button{
+    padding: 40px;
+    border: none;
+    cursor: pointer;
+}

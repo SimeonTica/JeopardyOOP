@@ -4,37 +4,57 @@ import useFetch from './useFetch';
 import './styles/Game.css';
 import Card from './Card';
 import dots from './images/BgDots.png';
-const Game = () => {
+const Game = ({playerName}) => {
 
-    const [card, setCard] = useState('Choose a card');
+    const [card, setCard] = useState("Score: " + 0);
     const [renderQuestion, setRenderQuestion] = useState(false);
+    const [renderFinish, setRenderFinish] = useState(false);
 
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
-    const {data: categorii, loading: loading1} = useFetch("http://localhost:8080/categories");
-    const {data: intrebari, loading: loading2} = useFetch("http://localhost:8080/questions");
-    
-    function changeLoading(l1, l2){
-        if(l1 == false && l2 == false){
-            setLoading(false);
-        }
-    }
+    const [questions, setQuestions] = useState(null);
+
+    let {data: categorii, loading: loading1, error: error1} = useFetch("http://localhost:8080/categories/" + playerName);
+    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://localhost:8080/questions/" + playerName);
 
     useEffect(() => {
 
-        changeLoading(loading1, loading2);
+        if(intrebari != null){
 
-    }, [loading1, loading2])
+            setQuestions(intrebari); 
+        }
+    }, [intrebari]);
+
+    function changeLoading(l1, l2){
+        if(l1 === false && l2 === false){
+            setLoading(false);
+        }
+    }
+    function changeLoadingErr(l1, l2){
+        if(l1 != null && l2 != null){
+            setError("Failed to fetch");
+        }
+    }
+    
+    useEffect(() => {
+        
+        changeLoading(loading1, loading2);
+        changeLoadingErr(error1, error2);
+
+
+    }, [loading1, loading2, error1, error2])
 
     return (
         <div>
-            <Link className='back-home' to='/'>GO HOME</Link>
+            {!renderFinish && <Link className='back-home' to='/'>GO HOME</Link>}
             <img className='upperDots' src={ dots } alt="" />
             <img className='lowerDots' src={ dots } alt="" />
             {!loading && <div className="top-text">{ card }</div>}
 
-            {loading && <div className='loading'>Loading...</div>}
-            {!loading && <Card  setCard = { setCard } intrebari = { intrebari } renderQuestion = { renderQuestion } setRenderQuestion= { setRenderQuestion } categories={ categorii }/> }
+            {loading && !error && <div className='loading'>Loading...</div>}
+            {loading && error && <div className='loading'>Failed to fetch</div>}
+            {!loading && <Card  setCard = { setCard } intrebari = { questions } renderQuestion = { renderQuestion } setRenderQuestion = { setRenderQuestion } categories = { categorii } setQuestions = { setQuestions } playerName = { playerName } setRenderFinish = {setRenderFinish}/> }
         </div>
      );
 }

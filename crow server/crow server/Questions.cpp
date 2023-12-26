@@ -14,12 +14,12 @@ int Questions::generateRandomNumberInInterval(int a, int b) {
 std::vector<int> Questions::generateRandomCategories() {
 
     int i = 0;
-    int v[] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+    int v[] = {0,0,0,0,0,0};
     std::vector<int> ans;
 
     while (i < 5) {
 
-        int dis = generateRandomNumberInInterval(1, 20) - 1;
+        int dis = generateRandomNumberInInterval(1, 5) - 1;
 
         if (v[dis] == 0) {
 
@@ -45,6 +45,9 @@ std::string Questions::pickOneQuestion(std::string file) {
 
 void Questions::extractQuestionsAndCategories() {
 	
+    stringCategories.clear();
+    stringQuestions.clear();
+
     std::vector<int> ans = generateRandomCategories();
 
     for (int i = 0; i < 5; i++)
@@ -77,6 +80,33 @@ void Questions::extractQuestionsAndCategories() {
     }
 }
 
+void Questions::changeQuestionWithClientResponse(const json& q) {
+
+    std::string line = StructToString(from_json(q));
+
+    std::stringstream ss(line);
+
+    std::string token;
+    std::getline(ss, token, ',');
+
+    for (int i = 0; i < stringQuestions.size(); i++)
+    {
+        std::stringstream ssq(stringQuestions[i]);
+
+        std::string tokenq;
+        std::getline(ssq, tokenq, ',');
+
+        if (tokenq == token) {
+
+            stringQuestions[i] = line;
+                convertQuestions();
+            convertQuestionCategories();
+            break;
+        }
+    }
+
+}
+
 jsonQuestion Questions::stringToStruct(const std::string line) {
 
     jsonQuestion q;
@@ -102,11 +132,31 @@ jsonQuestion Questions::stringToStruct(const std::string line) {
     q.raspCorect = columns[6];
     q.id = std::to_string(questionCount);
     q.render = columns[8];
+    q.correct = columns[9];
 
     questionCount++;
 
     return q;
 
+}
+
+std::string Questions::StructToString(jsonQuestion q) {
+
+    std::string line;
+
+    line += q.intrebare + ",";
+    line += q.punctaj + ",";
+    line += q.rasp[0] + ",";
+    line += q.rasp[1] + ",";
+    line += q.rasp[2] + ",";
+    line += q.rasp[3] + ",";
+    line += q.raspCorect + ",";
+    line += q.id + ",";
+    line += q.render + ",";
+    line += q.correct;
+
+
+    return line;
 }
 
 json Questions::to_json(const jsonQuestion &q) {
@@ -122,10 +172,29 @@ json Questions::to_json(const jsonQuestion &q) {
             }},
             {"raspCorect", q.raspCorect},
             {"id", q.id},
-            {"render", q.render}
+            {"render", q.render},
+            {"correct", q.correct}
         };
 
     return j;
+}
+
+jsonQuestion Questions::from_json(const json& j) {
+
+    jsonQuestion q;
+
+    j.at("intrebare").get_to(q.intrebare);
+    j.at("punctaj").get_to(q.punctaj);
+    j.at("raspCorect").get_to(q.raspCorect);
+    j.at("id").get_to(q.id);
+    j.at("render").get_to(q.render);
+    j.at("correct").get_to(q.correct);
+    q.rasp.push_back(j.at("rasp")[0].at("r"));
+    q.rasp.push_back(j.at("rasp")[1].at("r"));
+    q.rasp.push_back(j.at("rasp")[2].at("r"));
+    q.rasp.push_back(j.at("rasp")[3].at("r"));
+
+    return q;
 }
 
 void Questions::convertQuestions() {

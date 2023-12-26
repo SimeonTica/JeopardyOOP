@@ -9,7 +9,7 @@ const GameOptions = () => {
             <img className='lowerDots' src={ dots } alt="" />
             <main className='buttonsWrapper'>
                 <nav className='buttons'>
-                <Link to='/game'>SINGLEPLAYER</Link>
+                <Link to='/singleplayer'>SINGLEPLAYER</Link>
                 <Link to='/game'>MULTIPLAYER</Link>
                 <Link className='back' to='/'>BACK</Link>
                 </nav>
