@@ -128,17 +128,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="crow server.cpp" />
+    <ClCompile Include="Multiplayer.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Questions.cpp" />
     <ClCompile Include="ReadCSV.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Singleplayer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Multiplayer.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Questions.h" />
     <ClInclude Include="ReadCSV.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="Singleplayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

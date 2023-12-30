@@ -1,28 +1,21 @@
-import './styles/Singleplayer.css'
-import { useState } from "react";
 import dots from './images/BgDots.png';
-import { Link } from "react-router-dom";
-import Game from './Game';
-const Singleplayer = () => {
-    
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Room from './Room';
+import './styles/Room.css';
+const Multiplayer = () => {
+
     const [goToGame, setGoToGame] = useState(false);
     const [name, setName] = useState("default");
     function handleSubmit(e) {
-        
+
         e.preventDefault();
         setName(e.target.children[0].value);
+        setGoToGame(true);
+    }
 
-        fetch("http://localhost:8080/singleplayer/" + e.target.children[0].value)
-            .then(res => res.json())
-            .then(d => {
-                setGoToGame(true);
-            })
-            .catch(e => {
-                console.log(e);
-            });
-      }
+    return (
 
-    return ( 
         !goToGame ?
         <div className="centered">
             <Link className='back-home' to='/'>GO HOME</Link>
@@ -35,8 +28,8 @@ const Singleplayer = () => {
             </form>
         </div>
         :
-        <Game playerName={name}/>
+        <Room name = { name }/>
      );
 }
  
-export default Singleplayer;
+export default Multiplayer;

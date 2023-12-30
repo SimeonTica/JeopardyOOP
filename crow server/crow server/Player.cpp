@@ -3,7 +3,7 @@
 
 Player::Player()
 {
-	this->nickname = "";
+	this->nickname = "default";
 	this->score = 0;
 }
 

@@ -10,7 +10,7 @@ const GameOptions = () => {
             <main className='buttonsWrapper'>
                 <nav className='buttons'>
                 <Link to='/singleplayer'>SINGLEPLAYER</Link>
-                <Link to='/game'>MULTIPLAYER</Link>
+                <Link to='/multiplayer'>MULTIPLAYER</Link>
                 <Link className='back' to='/'>BACK</Link>
                 </nav>
             </main>

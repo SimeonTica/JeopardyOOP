@@ -41,6 +41,7 @@ private:
 public:
 	friend class Game;
 	friend class Singleplayer;
+	friend class Multiplayer;
 
 	void changeQuestionWithClientResponse(const json& q);
 	void extractQuestionsAndCategories();

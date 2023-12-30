@@ -10,8 +10,9 @@ void Game::startGame() {
     crow::App<crow::CORSHandler> app;
 
     Singleplayer singleplayer;
+    Multiplayer multiplayer;
 
-    CROW_ROUTE(app, "/<string>") 
+    CROW_ROUTE(app, "/singleplayer/<string>") 
         ([&](std::string pName){
         
         Questions questions;
@@ -31,6 +32,7 @@ void Game::startGame() {
         });
 
     singleplayer.startRoutes(app);
+    multiplayer.startRoutes(app);
 
     app.port(8080).multithreaded().run();
 }

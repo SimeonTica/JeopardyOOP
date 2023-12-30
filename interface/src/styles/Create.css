@@ -1,0 +1,31 @@
+.room{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 50px;
+}
+.space{
+    margin-top: 30px;
+}
+.start{
+    margin: auto;
+    display: block;
+    padding: 40px 100px;
+    margin-top: 260px;
+    margin-bottom: 50px;
+    border: none;
+}
+.start:hover{
+    cursor: pointer;
+}
+.player{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    color: #D0B7F9;
+}
+.room-number{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 50px;
+    color: #F0A60C;
+}
