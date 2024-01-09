@@ -1,31 +1,3 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 161,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 162,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 163,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 164,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 165,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 166,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 167,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 168,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 169,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 170,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 171,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 172,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 173,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 174,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 175,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 176,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 177,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 178,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 179,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 180,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 181,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 182,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 183,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 184,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 185,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 186,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 187,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 188,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 189,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 190,500,1,2,3,4,3,3,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+If you paint a mural on a classroom wall as an assignment for your art class, who owns the copyright?	500	The school because it owns the wall.	You do because you are the "author" of the work.	Your parents because you are too young to own a copyright.	Your art teacher because she assigned the art project.	You do because you are the "author" of the work.	1	TRUE	FALSE
+Which of the following items can be copyrighted?	500	Computer software	Names	Postings in a chatroom	Statistics data	Computer software	2	TRUE	FALSE

@@ -1,18 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 364,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 365,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 366,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 367,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 368,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 369,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 370,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 371,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 372,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 373,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 374,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 375,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 376,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 377,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 378,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 379,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 380,1000,1,2,3,4,1,1,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+How can marketing automation improve the efficiency of email marketing campaigns?	1000	It streamlines various tasks like personalizing content and optimizing communication with subscribers.	It helps by making data-driven adjustments to the email marketing strategies.	It conducts a comprehensive audit of the email marketing performance.	It performs A/B testing on email marketing campaigns to determine which campaign is successful.	It streamlines various tasks like personalizing content and optimizing communication with subscribers.	1	TRUE	FALSE
+What are backlinks?	1000	Backlinks are hidden links within the web page.	Links to unrelated, but successful websites.	Backlinks are hyperlinks from one website to another.	Links that are placed in anchor text.	Backlinks are hyperlinks from one website to another.	2	TRUE	FALSE
+Briefly explain the concept of customer segmentation.	1000	The process of categorizing social media users into two groups, users that may buy the products and users that may not.	The process of categorizing a target audience into distinct groups based on shared characteristics or behaviors.	Randomly splitting the audience into two groups in the process of A/B testing.	Using different marketing strategies for users, depending on their device type.	The process of categorizing a target audience into distinct groups based on shared characteristics or behaviors.	3	TRUE	FALSE

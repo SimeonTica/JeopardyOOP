@@ -1,19 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 283,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 284,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 285,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 286,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 287,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 288,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 289,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 290,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 291,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 292,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 293,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 294,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 295,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 296,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 297,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 298,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 299,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 300,500,1,2,3,4,1,1,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+Under which circumstances a content creator doesn’t need permission of the copyright owner to use copyrighted material?	500	For “fair use”.	For “works made for hire”.	By citing the source.	By modifying the typographic ornamentation, lettering, and coloring.	For “fair use”.	1	TRUE	FALSE
+Which symbol is used to mark a work as copyrighted?	500	™	®	©	℮	©	2	TRUE	FALSE
+Which of the following is considered fixed content?	500	Content with copyright notice.	Work protected under the copyright law.	Work in the public domain.	Written down or recorded work.	Written down or recorded work.	3	TRUE	FALSE

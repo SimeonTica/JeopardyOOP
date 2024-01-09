@@ -1,40 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 91,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 92,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 93,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 94,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 95,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 96,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 97,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 98,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 99,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 100,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 101,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 102,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 103,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 104,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 105,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 106,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 107,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 108,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 109,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 110,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 111,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 112,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 113,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 114,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 115,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 116,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 117,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 118,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 119,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 120,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 121,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 122,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 123,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 124,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 125,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 126,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 127,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 128,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 129,250,1,2,3,4,3,3,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+If a work is in the Public Domain, it means:	250	You can copy it without getting Permission from anyone.	You can find it at a public library.	You can get it for free online.	The Term of copyright in the work has run out.	The Term of copyright in the work has run out.	1	TRUE	FALSE
+Creative commons allows copyright holders to:	250	Grant unlimited and unrestricted copyright protection to their work.	Put their work in the public domain.	Restrict users from accessing their work online.	Make their work available for public use, under specific conditions.	Make their work available for public use, under specific conditions.	2	TRUE	FALSE
+Which of the following is/are defense(s) to copyright Infringement?	250	"I'm using the copyrighted work for personal, non-commercial purposes."	“I didn’t know the work was copyrighted.”	“I’m giving the copyright owner free publicity.”	Fair Use	Fair Use	3	TRUE	FALSE

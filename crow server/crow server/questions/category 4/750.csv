@@ -1,17 +1,3 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 249,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 750,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 251,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 252,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 253,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 254,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 255,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 256,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 257,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 258,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 259,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 260,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 261,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 262,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 263,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 264,750,1,2,3,4,1,1,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+The term of copyright for a work posted on a web site:	750	Is the same as the term would be if the work was originally Published in print or any other Medium.	Does not exist because the internet is part of the Public Domain so it is not protected by copyright.	Lasts for the life of the author plus 70 years.	Depends upon whether a Copyright Notice is included on the web page on which the work appears.	Lasts for the life of the author plus 70 years.	1	TRUE	FALSE
+The poet Edgar Alle n Poe write many well known pieces of literary works, and he died in 1849. You can find legal and free copies of his writing on the internet. What category below applies to this situation?	750	Classroom Exemption	Fair Use	Creative Commons	Public Domain	Fair Use	2	TRUE	FALSE

@@ -1,15 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 235,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 236,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 237,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 238,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 239,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 240,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 241,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 242,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 243,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 244,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 245,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 246,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 247,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 248,500,1,2,3,4,1,1,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+What is Fair Use?	500	unfair use of copyright material	all copyright material	pictures and essays	materials that can be used without the owner's permission	pictures and essays	1	TRUE	FALSE
+For a work to be protectible under copyright, it must:	500	Include a Copyright Notice.	Be fixed in a tangible form of expression.	Be of professional quality.	Be original.	Be original.	2	TRUE	FALSE
+What is copyright infringement?	500	anyone who uses someone's work, but with permission	a copy of someone's work	a picture of someone's work	anyone who uses someone's work without permission	anyone who uses someone's work without permission	3	TRUE	FALSE

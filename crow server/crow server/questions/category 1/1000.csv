@@ -1,20 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 429,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 430,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 431,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 432,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 433,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 434,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 435,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 436,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 437,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 438,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 439,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 440,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 441,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 442,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 443,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 444,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 445,1000,1,2,3,4,3,3,TRUE,FALSE
-intrebare 446,1000,1,2,3,4,1,1,TRUE,FALSE
-intrebare 447,1000,1,2,3,4,1,1,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+What are the key components of an effective landing page for online advertising.	1000	A compelling headline, engaging visuals, trust indicators and key benefits and features of the offer or product.	Keywords, backlinks, and paid advertising, as well as fast loading times, easy navigation, and mobile optimization.	Broken links, PPC advertising, duplicate content, and affiliate marketing.	Emerging technologies like AI, chatbots, Augmented and Virtual Reality.	A compelling headline, engaging visuals, trust indicators and key benefits and features of the offer or product.	1	TRUE	FALSE
+Describe the concept of long-tail keywords in the context of SEO.	1000	They are the shorter keywords phrases, more common and more competitive search queries.	They are longer, more specific keyword phrases that users typically use, representing less common and less competitive search queries.	They represent the most common keywords used, regardless of their length.	These type of keywords are not significant in the context of SEO due to the fact that they are less likely to be used by users.	They are longer, more specific keyword phrases that users typically use, representing less common and less competitive search queries.	2	TRUE	FALSE
+What metrics or KPIs (Key Performance Indicators) are most commonly used to measure the success of a social media marketing campaign?	1000	Conversion rates	Likes, shares, comments, and clicks.	A/B testing	Return on investment (ROI)	Likes, shares, comments, and clicks.	3	TRUE	FALSE

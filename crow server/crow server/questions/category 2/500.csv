@@ -1,20 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 337,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 338,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 339,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 340,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 341,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 342,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 343,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 344,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 345,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 346,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 347,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 348,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 349,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 350,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 351,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 352,500,1,2,3,4,3,3,TRUE,FALSE
-intrebare 353,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 354,500,1,2,3,4,1,1,TRUE,FALSE
-intrebare 355,500,1,2,3,4,3,3,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+What is the primary goal of social media marketing for businesses?	500	To distribute marketing materials meant for virtual reality (VR) and augmented reality (AR).	To connect with smartphone and tablet users, the primary users of social media, because they are more likely to become future customers.	Encourage the production and exchange of knowledge, ideas, hobbies, and other kinds of expression.	Develop and improve the brand, engage the audience, and promote the products.	Develop and improve the brand, engage the audience, and promote the products.	1	TRUE	FALSE
+How can you optimize a website for mobile SEO?	500	By using invisible keywords and duplicated content, needed for ranking higher in a SERP.	By including 23dofollow links in anchor text that go to well-known websites optimized for mobile devices.	By promoting the website on social media, which is primary used on mobile devices.	Ensure that the site is mobile-friendly and provides a positive user experience for visitors accessing it from mobile devices.	Ensure that the site is mobile-friendly and provides a positive user experience for visitors accessing it from mobile devices.	2	TRUE	FALSE
+How can A/B testing benefit email marketing campaigns?	500	Successful A/B testing integration can aid in reaching out to untapped markets and potential customers.	A/B testing can determine if the emails are correctly formulated, clear, and concise.	By providing valuable insights into which elements of the emails are most effective at engaging recipients.	It helps raise brand recognition and exposure among the intended audience.	By providing valuable insights into which elements of the emails are most effective at engaging recipients.	3	TRUE	FALSE

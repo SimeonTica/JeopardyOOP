@@ -390,13 +390,10 @@ bool Multiplayer::checkStatus(Questions questions) {
     for (int i = 0; i < questions.stringQuestions.size(); i++)
     {
         jsonQuestion quest = questions.stringToStruct(questions.stringQuestions[i]);
-        std::cout << quest.render << " " << i << std::endl;
         if (quest.render == "TRUE") {
             return false;
         }
     }
-
-    std::cout << "done" << std::endl;
 
     return true;
 }

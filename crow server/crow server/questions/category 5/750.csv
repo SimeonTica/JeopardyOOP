@@ -1,31 +1,3 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 191,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 192,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 193,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 194,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 195,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 196,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 197,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 198,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 199,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 200,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 201,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 202,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 203,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 204,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 205,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 206,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 207,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 208,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 209,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 210,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 211,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 212,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 213,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 214,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 215,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 216,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 217,750,1,2,3,4,3,3,TRUE,FALSE
-intrebare 218,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 219,750,1,2,3,4,1,1,TRUE,FALSE
-intrebare 220,750,1,2,3,4,3,3,TRUE,FALSE
+intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+Which of these statements is false?	750	Copyright protection applies worldwide uniformly, with the same rules and duration in every country.	Copyright is automatic.	Copyright does not last forever and can expire after a certain time.	Copyright protection requires the author to renew it periodically to maintain their rights.	Copyright protection requires the author to renew it periodically to maintain their rights.	1	TRUE	FALSE
+A kindergarten child's finger painting cannot be copyrighted because:	750	It is not true; a kindergarten child's finger painting can be copyrighted.	A child in kindergarten is just a little kid.	Anybody can finger paint.	A child in kindergarten does not care whether his work is copyrighted.	It is not true; a kindergarten child's finger painting can be copyrighted.	2	TRUE	FALSE

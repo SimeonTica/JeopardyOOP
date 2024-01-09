@@ -82,19 +82,19 @@ void Questions::extractQuestionsAndCategories() {
 
 void Questions::changeQuestionWithClientResponse(const json& q) {
 
-    std::string line = StructToString(from_json(q));
+    std::string line = StructToString(from_json(q)); 
 
     std::stringstream ss(line);
 
     std::string token;
-    std::getline(ss, token, ',');
+    std::getline(ss, token, '\t');
 
     for (int i = 0; i < stringQuestions.size(); i++)
     {
         std::stringstream ssq(stringQuestions[i]);
 
         std::string tokenq;
-        std::getline(ssq, tokenq, ',');
+        std::getline(ssq, tokenq, '\t');
 
         if (tokenq == token) {
 
@@ -119,8 +119,7 @@ jsonQuestion Questions::stringToStruct(const std::string line) {
 
     int i = 0;
 
-    while (std::getline(ss, token, ',')){
-        //std::cout << token << std::endl;
+    while (std::getline(ss, token, '\t')){
         columns.push_back(token);
     }
     q.intrebare = columns[0];
@@ -144,17 +143,18 @@ std::string Questions::StructToString(jsonQuestion q) {
 
     std::string line;
 
-    line += q.intrebare + ",";
-    line += q.punctaj + ",";
-    line += q.rasp[0] + ",";
-    line += q.rasp[1] + ",";
-    line += q.rasp[2] + ",";
-    line += q.rasp[3] + ",";
-    line += q.raspCorect + ",";
-    line += q.id + ",";
-    line += q.render + ",";
+    line += q.intrebare + "\t";
+    line += q.punctaj + "\t";
+    line += q.rasp[0] + "\t";
+    line += q.rasp[1] + "\t";
+    line += q.rasp[2] + "\t";
+    line += q.rasp[3] + "\t";
+    line += q.raspCorect + "\t";
+    line += q.id + "\t";
+    line += q.render + "\t";
     line += q.correct;
 
+    std::cout << "line: " << line << "\n";
 
     return line;
 }

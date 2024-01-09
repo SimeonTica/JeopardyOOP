@@ -1,30 +1,4 @@
-intrebare?,punctaj,raspuns 1,raspuns 2,raspuns 3,raspuns 4,raspuns corect,index,render,correct
-intrebare 1,250,1,2,3,4,1,1,TRUE,FALSE
-intrebare 2,250,1,2,3,4,2,2,TRUE,FALSE
-intrebare 3,250,1,2,3,4,3,3,TRUE,FALSE
-intrebare 4,250,1,2,3,4,4,4,TRUE,FALSE
-intrebare 5,250,1,2,3,4,1,5,TRUE,FALSE
-intrebare 6,250,1,2,3,4,2,6,TRUE,FALSE
-intrebare 7,250,1,2,3,4,3,7,TRUE,FALSE
-intrebare 8,250,1,2,3,4,4,8,TRUE,FALSE
-intrebare 9,250,1,2,3,4,1,9,TRUE,FALSE
-intrebare 10,250,1,2,3,4,2,10,TRUE,FALSE
-intrebare 11,250,1,2,3,4,3,11,TRUE,FALSE
-intrebare 12,250,1,2,3,4,4,12,TRUE,FALSE
-intrebare 13,250,1,2,3,4,1,13,TRUE,FALSE
-intrebare 14,250,1,2,3,4,2,14,TRUE,FALSE
-intrebare 15,250,1,2,3,4,3,15,TRUE,FALSE
-intrebare 16,250,1,2,3,4,4,16,TRUE,FALSE
-intrebare 17,250,1,2,3,4,1,17,TRUE,FALSE
-intrebare 18,250,1,2,3,4,2,18,TRUE,FALSE
-intrebare 19,250,1,2,3,4,3,19,TRUE,FALSE
-intrebare 20,250,1,2,3,4,4,20,TRUE,FALSE
-intrebare 21,250,1,2,3,4,1,21,TRUE,FALSE
-intrebare 22,250,1,2,3,4,2,22,TRUE,FALSE
-intrebare 23,250,1,2,3,4,3,23,TRUE,FALSE
-intrebare 24,250,1,2,3,4,4,24,TRUE,FALSE
-intrebare 25,250,1,2,3,4,1,25,TRUE,FALSE
-intrebare 26,250,1,2,3,4,2,26,TRUE,FALSE
-intrebare 27,250,1,2,3,4,3,27,TRUE,FALSE
-intrebare 28,250,1,2,3,4,4,28,TRUE,FALSE
-intrebare 29,250,1,2,3,4,1,29,TRUE,FALSE
+"intrebare?	punctaj	raspuns1	raspuns2	raspuns3	raspuns4	raspuns corect	index	render	corect
+"What is the role of Search Engine Optimization (SEO)?	250	Optimizing a search engine to faster generate a result page.	Improving organic traffic to a webpage/website.	Displaying paid advertising in the top 5 positions of a SERP.	Reduce the loading time of a page/site when a user accesses it.	Improving organic traffic to a webpage/website.	1	TRUE	FALSE
+"From the perspective of digital marketing, is SEO sufficient?	250	In most cases, SEO is sufficient, but placing dofollow links in anchor text, that redirects to popular websites improves a website page authority (PA).	Yes, SEO contains all the tools needed to drive new customers to a webpage.	No. Along SEO, using invisible keywords and duplicated content are needed for ranking higher in a SERP.	No, paid advertising, social media marketing, email marketing and content marketing complements SEO in bringing customers to a website.	No, paid advertising, social media marketing, email marketing and content marketing complements SEO in bringing customers to a website.	2	TRUE	FALSE
+"Which of the following represent Search Engine Optimization tools?	250	AdWords and Google Analytics.	Google Ads and Facebook Ads.	Ahrefs, Moz, and Screaming Frog.	Google Keyword Planner, SEMrush, and HubSpot.	Ahrefs, Moz, and Screaming Frog.	3	TRUE	FALSE
