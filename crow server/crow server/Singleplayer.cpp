@@ -98,11 +98,12 @@ bool Singleplayer::checkStatus(Questions questions) {
     for (int i = 0; i < questions.stringQuestions.size(); i++)
     {
         jsonQuestion quest = questions.stringToStruct(questions.stringQuestions[i]);
+        std::cout << quest.render << " " << i + 1 << "\n";
         if (quest.render == "TRUE") {
             return false;
         }
     }
-
+    std::cout << "Done\n";
     return true;
 }
 

@@ -12,7 +12,7 @@ const Singleplayer = () => {
         e.preventDefault();
         setName(e.target.children[0].value);
 
-        fetch("http://localhost:8080/singleplayer/" + e.target.children[0].value)
+        fetch("http://192.168.1.128:8080/singleplayer/" + e.target.children[0].value)
             .then(res => res.json())
             .then(d => {
                 setGoToGame(true);

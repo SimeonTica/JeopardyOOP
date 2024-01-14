@@ -7,15 +7,33 @@ const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName
 
 let ans = intrebare.correct;
 let raspuns;
-
-let {message: data} = useFetchPost("http://192.168.1.128:8080/question/" + playerName, intrebare);
-let {data: finalPoints} = useFetch("http://192.168.1.128:8080/score/" + playerName);
+let data, finalPoints;
 
 useFetchPost("http://192.168.1.128:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);
 }, [data]);
+
+useEffect(() => {
+    const fetchData = async () => {
+        let response = await fetch("http://192.168.1.128:8080/question/" + playerName, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(intrebare),
+        });
+        data = await response.json();
+        setQuestions(data);
+
+        let responsePoints = await fetch("http://192.168.1.128:8080/score/" + playerName);
+        finalPoints = await responsePoints.json();
+        setFinished(finalPoints.points);
+    };
+
+    fetchData();
+}, []);
 
 useEffect(() => {
 
@@ -39,9 +57,6 @@ else
                 <button onClick={() => {
                     setRenderQuestion(false);
                     if(finalPoints != null){
-
-                        setFinished(finalPoints.points);
-                        console.log(finalPoints.points);
                     }
                     setCard("Score: " + score);
                 }}>Next</button>
