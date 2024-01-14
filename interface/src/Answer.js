@@ -8,10 +8,10 @@ const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName
 let ans = intrebare.correct;
 let raspuns;
 
-let {message: data} = useFetchPost("http://localhost:8080/question/" + playerName, intrebare);
-let {data: finalPoints} = useFetch("http://localhost:8080/score/" + playerName);
+let {message: data} = useFetchPost("http://192.168.1.128:8080/question/" + playerName, intrebare);
+let {data: finalPoints} = useFetch("http://192.168.1.128:8080/score/" + playerName);
 
-useFetchPost("http://localhost:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+useFetchPost("http://192.168.1.128:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);

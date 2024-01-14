@@ -34,5 +34,7 @@ void Game::startGame() {
     singleplayer.startRoutes(app);
     multiplayer.startRoutes(app);
 
-    app.port(8080).multithreaded().run();
+    app.bindaddr("192.168.1.128").port(8080);
+
+    app.multithreaded().run();
 }

@@ -24,8 +24,8 @@ const Join = ({ name, room }) => {
         room: roomNumber
     };
 
-    const socket = new WebSocket("ws://localhost:8080/ws");
-    const socketStart = new WebSocket("ws://localhost:8080/ws/startgame");    
+    const socket = new WebSocket("ws://192.168.1.128:8080/ws");
+    const socketStart = new WebSocket("ws://192.168.1.128:8080/ws/startgame");    
 
     socketStart.addEventListener("open", event => {
         socketStart.send(JSON.stringify(dataStart));
