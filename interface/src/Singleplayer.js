@@ -12,7 +12,11 @@ const Singleplayer = () => {
         e.preventDefault();
         setName(e.target.children[0].value);
 
-        fetch("http://34.16.165.227:8080/singleplayer/" + e.target.children[0].value)
+        fetch("http://0.0.0.0:8080/singleplayer/" + e.target.children[0].value,{
+            headers: {
+                'Access-Control-Allow-Origin':'*'
+              }
+        })
             .then(res => res.json())
             .then(d => {
                 setGoToGame(true);
