@@ -1,0 +1,2 @@
+Executabilul pentru server se afla in crow server
+Iar in floderul interface trebuie deschisa o consola si rulat comanda npx serve -s build
