@@ -20,8 +20,8 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
 
     const [questions, setQuestions] = useState(null);
 
-    let {data: categorii, loading: loading1, error: error1} = useFetch("http://192.168.1.128:8080/multiplayer/categories/" + roomNumber);
-    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://192.168.1.128:8080/multiplayer/questions/" + roomNumber);
+    let {data: categorii, loading: loading1, error: error1} = useFetch("http://34.16.165.227:8080/multiplayer/categories/" + roomNumber);
+    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://34.16.165.227:8080/multiplayer/questions/" + roomNumber);
 
     let turnDataNext = {
 
@@ -44,7 +44,7 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
     const turnSocketRef = useRef(null);
 
 useEffect(() => {
-    turnSocketRef.current = new WebSocket("ws://192.168.1.128:8080/ws/turn");
+    turnSocketRef.current = new WebSocket("ws://34.16.165.227:8080/ws/turn");
 
     turnSocketRef.current.addEventListener("open", e => {
         turnSocketRef.current.send(JSON.stringify(turnData));
@@ -54,7 +54,7 @@ useEffect(() => {
         let turnInfo = JSON.parse(e.data);
 
         if(turnInfo.update == "yes"){
-            intrebari = await fetch("http://192.168.1.128:8080/multiplayer/questions/" + roomNumber).then(data => data.json());
+            intrebari = await fetch("http://34.16.165.227:8080/multiplayer/questions/" + roomNumber).then(data => data.json());
             setQuestions(intrebari);
         }
 
@@ -63,7 +63,7 @@ useEffect(() => {
         }
 
         if(turnInfo.stop != undefined){ 
-            fetch("http://192.168.1.128:8080/multiplayer/score/" + roomNumber + "/" + playerName).then(data => data.json()).then(data => setFinished(data.points));
+            fetch("http://34.16.165.227:8080/multiplayer/score/" + roomNumber + "/" + playerName).then(data => data.json()).then(data => setFinished(data.points));
             setRenderFinish(true);
         }
     });
@@ -77,7 +77,7 @@ useEffect(() => {
             if (turnSocketRef.current.readyState == WebSocket.OPEN) {
                 turnSocketRef.current.send(JSON.stringify(turnDataNext));
                 setChangeTurn(false);
-                let finalPoints = await fetch("http://192.168.1.128:8080/multiplayer/score/" + roomNumber + "/" + playerName).then(data => data.json());
+                let finalPoints = await fetch("http://34.16.165.227:8080/multiplayer/score/" + roomNumber + "/" + playerName).then(data => data.json());
                 if(finalPoints.points != -1){
                     console.log("aa");
                     turnSocketRef.current.send(JSON.stringify(turnDataStop));

@@ -9,7 +9,7 @@ let ans = intrebare.correct;
 let raspuns;
 let data, finalPoints;
 
-useFetchPost("http://192.168.1.128:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+useFetchPost("http://34.16.165.227:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);
@@ -17,7 +17,7 @@ useEffect(() => {
 
 useEffect(() => {
     const fetchData = async () => {
-        let response = await fetch("http://192.168.1.128:8080/question/" + playerName, {
+        let response = await fetch("http://34.16.165.227:8080/question/" + playerName, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ useEffect(() => {
         data = await response.json();
         setQuestions(data);
 
-        let responsePoints = await fetch("http://192.168.1.128:8080/score/" + playerName);
+        let responsePoints = await fetch("http://34.16.165.227:8080/score/" + playerName);
         finalPoints = await responsePoints.json();
         setFinished(finalPoints.points);
     };
