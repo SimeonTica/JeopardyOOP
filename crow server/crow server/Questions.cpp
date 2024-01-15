@@ -4,6 +4,10 @@
 
 int Questions::generateRandomNumberInInterval(int a, int b) {
 
+    if (a > b) {
+        std::swap(a, b);
+    }
+
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
     std::uniform_int_distribution<> distr(a, b); // define the range
@@ -37,10 +41,10 @@ std::string Questions::pickOneQuestion(std::string file) {
 
     std::vector<std::string> allLines = getDataFromFile(file);
 
-    int randomLineNumber = generateRandomNumberInInterval(1, allLines.size() - 1);
-
-    return allLines[randomLineNumber];
-
+    if(!allLines.empty()){
+        int randomLineNumber = generateRandomNumberInInterval(1, allLines.size() - 1);
+        return allLines[randomLineNumber];
+    }
 }
 
 void Questions::extractQuestionsAndCategories() {
@@ -52,25 +56,25 @@ void Questions::extractQuestionsAndCategories() {
 
     for (int i = 0; i < 5; i++)
     {
-        std::string file = ".\\questions\\" + categories[ans[i]] + "\\";
+        std::string file = "./questions/" + categories[ans[i]] + "/";
         stringQuestions.push_back(pickOneQuestion(file + "250.csv"));
     }
 
     for (int i = 0; i < 5; i++)
     {
-        std::string file = ".\\questions\\" + categories[ans[i]] + "\\";
+        std::string file = "./questions/" + categories[ans[i]] + "/";
         stringQuestions.push_back(pickOneQuestion(file + "500.csv"));
     }
 
     for (int i = 0; i < 5; i++)
     {
-        std::string file = ".\\questions\\" + categories[ans[i]] + "\\";
+        std::string file = "./questions/" + categories[ans[i]] + "/";
         stringQuestions.push_back(pickOneQuestion(file + "750.csv"));
     }
 
     for (int i = 0; i < 5; i++)
     {
-        std::string file = ".\\questions\\" + categories[ans[i]] + "\\";
+        std::string file = "./questions/" + categories[ans[i]] + "/";
         stringQuestions.push_back(pickOneQuestion(file + "1000.csv"));
     }
 
@@ -122,7 +126,9 @@ jsonQuestion Questions::stringToStruct(const std::string line) {
     while (std::getline(ss, token, '\t')){
         columns.push_back(token);
     }
+    std::cout << "columns: " << columns.size() << "\n";
     q.intrebare = columns[0];
+    std::cout << "works\n";
     q.punctaj = columns[1];
     q.rasp.push_back(columns[2]);
     q.rasp.push_back(columns[3]);
