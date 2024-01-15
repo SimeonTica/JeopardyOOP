@@ -7,7 +7,7 @@ const useFetch = (link) => {
     const [error, setError] = useState(null);
     useEffect(() => {
     
-        fetch(link)
+        fetch(link, {})
             .then(res => res.json())
             .then(d => {
                 setData(d);
