@@ -31,11 +31,11 @@ const Create = ({ name }) => {
         setStart(true);
     }
 
-    const socketStart = new WebSocket("ws://10.182.0.3:8080/ws/startgame");
+    const socketStart = new WebSocket("ws://34.16.165.227:8080/ws/startgame");
 
     async function createRoom(data){
 
-        let info = await fetch("http://10.182.0.3:8080/multiplayer/create", {
+        let info = await fetch("http://34.16.165.227:8080/multiplayer/create", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -53,7 +53,7 @@ const Create = ({ name }) => {
 
         info.name = name;
 
-        const socket = new WebSocket("ws://10.182.0.3:8080/ws");
+        const socket = new WebSocket("ws://34.16.165.227:8080/ws");
 
         socket.addEventListener("open", event => {
             socket.send(JSON.stringify(info));

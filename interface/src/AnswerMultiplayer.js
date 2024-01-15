@@ -8,10 +8,10 @@ const AnswerMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions,
 let ans = intrebare.correct;    
 let raspuns;
 
-let {message: data} = useFetchPost("http://10.182.0.3:8080/multiplayer/question/" + roomNumber, intrebare);
-let {data: finalPoints} = useFetch("http://10.182.0.3:8080/multiplayer/score/" + roomNumber + "/" + playerName);
+let {message: data} = useFetchPost("http://34.16.165.227:8080/multiplayer/question/" + roomNumber, intrebare);
+let {data: finalPoints} = useFetch("http://34.16.165.227:8080/multiplayer/score/" + roomNumber + "/" + playerName);
 
-useFetchPost("http://10.182.0.3:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+useFetchPost("http://34.16.165.227:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);
@@ -28,7 +28,7 @@ useEffect(() => {
 
 const handleOnClick = async () => {
     setRenderQuestion(false);
-    let status = fetch("http://10.182.0.3:8080/multiplayer/turn/changeTurn/" + roomNumber, {
+    let status = fetch("http://34.16.165.227:8080/multiplayer/turn/changeTurn/" + roomNumber, {
         headers: {
             'Access-Control-Allow-Origin':'*'
           }
