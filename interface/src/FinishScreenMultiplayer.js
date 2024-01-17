@@ -5,7 +5,7 @@ import useFetchPost from "./useFetchPost";
 
 const FinishScreenMultiplayer = ({score, setCard, name, roomNumber}) => {
     
-    // let {message: data} = useFetchPost("http://localhost:8080/multiplayer/finish/" + roomNumber, {finish: 1});
+    // let {message: data} = useFetchPost("http://34.16.195.23:8080/multiplayer/finish/" + roomNumber, {finish: 1});
     //aici mai trebuie terminat finish screen ul  
     useEffect(() => {
 
