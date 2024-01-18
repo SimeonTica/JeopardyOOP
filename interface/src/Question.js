@@ -5,11 +5,32 @@ import Answer from './Answer';
 const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished}) => {
 
     const [answered, setAnswered] = useState(false);
+    const [timeLeft, setTimeLeft] = useState(10);
+
+    useEffect(() => {
+        if (timeLeft === 0) {
+            setAnswered(true);
+        } else {
+            const timerId = setTimeout(() => {
+                setTimeLeft(timeLeft - 1);
+            }, 1000);
+
+            return () => clearTimeout(timerId);
+        }
+    }, [timeLeft]);
+
+    useEffect(() => {
+        if (setRenderQuestion) {
+            setTimeLeft(10);
+        }
+    }, [setRenderQuestion]);
+
 
     const raspunsuri = intrebare.rasp;
     return (
         !answered ?
             <div>
+                <div className="card timer"> Time Left : { timeLeft }</div>
                 <div className='card points'>{ intrebare.punctaj }</div>
                 <div className='intrebare'>{ intrebare.intrebare }</div>
                 <div className='raspunsuriWrapper'>
@@ -25,7 +46,7 @@ const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerNa
                 </div>
             </div>
         :
-            <Answer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished }/>
+            <Answer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished } setTimeLeft={timeLeft}/>
      );
 }
  

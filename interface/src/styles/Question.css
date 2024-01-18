@@ -34,6 +34,10 @@
         margin: 80px auto;
         color: #F0A60C;
     }
+    .timer{
+        margin: 80px auto;
+    }
+    
 
 }
 
@@ -70,6 +74,14 @@
         max-width: 20%;
         margin: 30px auto;
         color: #F0A60C;
+    }
+    .timer{
+        max-width: 15%;
+        color:white;
+        margin: 30px auto;
+        font-style: italic;
+        align-items: center;
+        font-weight: 600;
     }
 
 }

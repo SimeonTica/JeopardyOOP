@@ -3,13 +3,14 @@ import useFetchPost from "./useFetchPost";
 import useFetch from "./useFetch";
 import { useEffect } from "react";
 
-const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished}) => {
+const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished,setTimeLeft}) => {
 
 let ans = intrebare.correct;
 let raspuns;
+let time = setTimeLeft
 let data, finalPoints;
 
-useFetchPost("http://192.168.1.128:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+useFetchPost("http://0.0.0.0:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);
@@ -17,7 +18,7 @@ useEffect(() => {
 
 useEffect(() => {
     const fetchData = async () => {
-        let response = await fetch("http://192.168.1.128:8080/question/" + playerName, {
+        let response = await fetch("http://0.0.0.0:8080/question/" + playerName, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ useEffect(() => {
         data = await response.json();
         setQuestions(data);
 
-        let responsePoints = await fetch("http://192.168.1.128:8080/score/" + playerName);
+        let responsePoints = await fetch("http://0.0.0.0:8080/score/" + playerName);
         finalPoints = await responsePoints.json();
         setFinished(finalPoints.points);
     };
@@ -47,8 +48,10 @@ useEffect(() => {
 if(ans ==="TRUE"){
     raspuns = "Good job!";
 }
-else
-    raspuns = "Wrong answer!";
+else if(time === 0)
+    raspuns = " Time Runned out";
+else 
+    raspuns = "Wrong answer";
 
     return ( 
         <div>

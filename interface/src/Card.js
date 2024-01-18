@@ -10,8 +10,22 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
     const [question, setQuestion] = useState(null);
     const [score, setScore] = useState(0);
     const [finished, setFinished] = useState(-1);
+    const [timeLeft, setTimeLeft] = useState(240);
+    const [timeFinish, setTimeFinish] = useState(false); 
+    const [skip, setSkip] = useState(false); 
 
-    
+
+    useEffect(() => {
+        if (timeLeft === 0) {
+            setTimeFinish(true); 
+        } else {
+            const timerId = setTimeout(() => {
+                setTimeLeft(timeLeft - 1);
+            }, 1000);
+
+            return () => clearTimeout(timerId);
+        }
+    }, [timeLeft]);
 
     const setCardtoCategory = (intrebare) => {
         categories.forEach(category => {
@@ -21,10 +35,15 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
         });
     }
 
+    if (timeFinish || skip) {
+        return <FinishScreen key={1} score={score} setCard={setCard} name={playerName} timeFinish={timeFinish} skip={skip}/>;
+    }
+
     return ( 
         finished == -1 || finished == null ?
         <div>
-            { !renderQuestion ? 
+            <div className="top-text"> Time left to finish all questions :  {timeLeft} </div>  
+            { !renderQuestion ?
                 <div className="card-container buttonsWrapper">
                     {[ <Category key='0' categories = { categories }/>,
                         intrebari.map(intrebare => (intrebare.render === "TRUE" ? 
@@ -50,10 +69,11 @@ const Card = ({setCard, intrebari, renderQuestion, setRenderQuestion, categories
                     <Question intrebare = { question } setRenderQuestion = { setRenderQuestion } setCard = { setCard } setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished }/>
                 </div>
             }
+           <div className="card timer" onClick={() => setSkip(true)}>Finish Early</div>
         </div>
         :
         [(setRenderFinish(true)),
-        <FinishScreen key={1} score = { finished } setCard = { setCard } name = { playerName }/>]
+        <FinishScreen key={1} score = { score } setCard = { setCard } name = { playerName } timeFinish={timeFinish}/>]
     ); 
 }
  
