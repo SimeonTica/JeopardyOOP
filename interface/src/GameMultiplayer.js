@@ -137,7 +137,7 @@ useEffect(() => {
 
             {loading && !error && <div className='loading'>Loading...</div>}
             {loading && error && <div className='loading'>Failed to fetch</div>}
-            {!loading && <CardMultiplayer  setCard = { setCard } intrebari = { questions } renderQuestion = { renderQuestion } setRenderQuestion = { setRenderQuestion } categories = { categorii } setQuestions = { setQuestions } playerName = { playerName } setRenderFinish = {setRenderFinish} roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } finished={finished} setFinished={setFinished} /> }
+            {!loading && <CardMultiplayer  setCard = { setCard } intrebari = { questions } renderQuestion = { renderQuestion } setRenderQuestion = { setRenderQuestion } categories = { categorii } setQuestions = { setQuestions } playerName = { playerName } setRenderFinish = {setRenderFinish} roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } finished={finished} setFinished={setFinished} turn = {turn} changeTurn={changeTurn}/> }
         </div> 
      );
 }

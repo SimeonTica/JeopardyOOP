@@ -45,7 +45,7 @@ const QuestionMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestion
                 </div>
             </div>
         :
-            <AnswerMultiplayer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } />
+            <AnswerMultiplayer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } timeLeft={timeLeft}/>
      );
 }
  

@@ -18,7 +18,7 @@ function App() {
             <Route path='/multiplayer' element={ <Multiplayer /> }></Route>
             <Route path='/credits' element={ <Credits /> }></Route> 
             <Route path='/rules' element={ <Rules /> }></Route> 
-            <Route path='/game-options' element={ <GameOptions /> }></Route> 
+            <Route path='/game-options' element={ <GameOptions /> }></Route>
           </Routes>  
         </div>
       </div>

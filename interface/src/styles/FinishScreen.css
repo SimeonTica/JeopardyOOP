@@ -2,11 +2,32 @@
     font-size: 50px;
     color: #D0B7F9;
     margin-bottom: 100px;
-    margin-top: 70px;
 }
 .finish span{
     color: #F0A60C;
 }
 .img{
     width: 28px;
+}
+.leaderboard-container{
+    display: flex;
+    flex-direction: row;
+    margin-left : 0px;
+    align-items: center;
+    justify-content: center;
+}
+.card.player{
+    max-width: 10%;
+    padding : 30px 60px;
+    color:white;
+    margin :0px;
+    margin: auto;
+    font-style: italic;
+    align-items: center;
+    cursor:default;
+    font-weight: 600;
+}
+.buttons.finish{
+    margin-top: 0px;
+    padding: 0px;
 }
