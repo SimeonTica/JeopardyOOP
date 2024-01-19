@@ -17,9 +17,9 @@ const Game = ({playerName}) => {
     const [questions, setQuestions] = useState(null);
     const [questionsAft, setQuestionsAft] = useState(null);
 
-    let {data: categorii, loading: loading1, error: error1} = useFetch("http://0.0.0.0:8080/categories/" + playerName);
-    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://0.0.0.0:8080/questions/1/" + playerName);
-    let {data: intrebari2} = useFetch("http://0.0.0.0:8080/questions/2/" + playerName);
+    let {data: categorii, loading: loading1, error: error1} = useFetch("http://localhost:8080/categories/" + playerName);
+    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://localhost:8080/questions/1/" + playerName);
+    let {data: intrebari2} = useFetch("http://localhost:8080/questions/2/" + playerName);
     
     useEffect(() => {
 

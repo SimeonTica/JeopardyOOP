@@ -24,9 +24,9 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
 
     const [questions, setQuestions] = useState(null);
 
-    let {data: categorii, loading: loading1, error: error1} = useFetch("http://0.0.0.0:8080/multiplayer/categories/" + roomNumber);
-    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://0.0.0.0:8080/multiplayer/questions/1/" + roomNumber);
-    let {data: intrebari2} = useFetch("http://0.0.0.0:8080/multiplayer/questions/2/" + roomNumber);
+    let {data: categorii, loading: loading1, error: error1} = useFetch("http://localhost:8080/multiplayer/categories/" + roomNumber);
+    let {data: intrebari, loading: loading2, error: error2} = useFetch("http://localhost:8080/multiplayer/questions/1/" + roomNumber);
+    let {data: intrebari2} = useFetch("http://localhost:8080/multiplayer/questions/2/" + roomNumber);
 
     let turnDataNext = {
 
@@ -62,7 +62,7 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
     }, [fetchOtherQuestions, changeQuestions]);
     
     useEffect(() => {
-        turnSocketRef.current = new WebSocket("ws://0.0.0.0:8080/ws/turn");
+        turnSocketRef.current = new WebSocket("ws://localhost:8080/ws/turn");
     
         turnSocketRef.current.addEventListener("open", e => {
             turnSocketRef.current.send(JSON.stringify(turnData));
@@ -73,10 +73,10 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
     
             if(turnInfo.update == "yes"){
                 if(changeQuestionsRef.current === false){
-                    intrebari = await fetch("http://0.0.0.0:8080/multiplayer/questions/1/" + roomNumber).then(data => data.json());
+                    intrebari = await fetch("http://localhost:8080/multiplayer/questions/1/" + roomNumber).then(data => data.json());
                 }
                 else{
-                    intrebari = await fetch("http://0.0.0.0:8080/multiplayer/questions/2/" + roomNumber).then(data => data.json());
+                    intrebari = await fetch("http://localhost:8080/multiplayer/questions/2/" + roomNumber).then(data => data.json());
                 }
                 setQuestions(intrebari);
             }
@@ -86,12 +86,12 @@ const GameMultiplayer = ({playerName, roomNumber}) => {
             }
     
             if(turnInfo.stop != undefined){ 
-                fetch("http://0.0.0.0:8080/multiplayer/score/2/" + roomNumber + "/" + playerName).then(data => data.json()).then(data => setFinished(data.points));
+                fetch("http://localhost:8080/multiplayer/score/2/" + roomNumber + "/" + playerName).then(data => data.json()).then(data => setFinished(data.points));
                 setRenderFinish(true);
             }
     
             if(turnInfo.change != undefined){
-                intrebari2 = await fetch("http://0.0.0.0:8080/multiplayer/questions/2/" + roomNumber).then(data => data.json());
+                intrebari2 = await fetch("http://localhost:8080/multiplayer/questions/2/" + roomNumber).then(data => data.json());
                 setQuestions(intrebari2);
                 // setFetchOtherQuestions(true);
                 setChangeQuestions(true);
@@ -111,9 +111,9 @@ useEffect(() => {
                 let finalPoints;
                 let finalPoints2;
                 if(fetchOtherQuestions === false)
-                    finalPoints = await fetch("http://0.0.0.0:8080/multiplayer/score/1/" + roomNumber + "/" + playerName).then(data => data.json());
+                    finalPoints = await fetch("http://localhost:8080/multiplayer/score/1/" + roomNumber + "/" + playerName).then(data => data.json());
                 else
-                finalPoints2 = await fetch("http://0.0.0.0:8080/multiplayer/score/2/" + roomNumber + "/" + playerName).then(data => data.json());
+                finalPoints2 = await fetch("http://localhost:8080/multiplayer/score/2/" + roomNumber + "/" + playerName).then(data => data.json());
                 if(finalPoints != undefined && finalPoints.points != -1){
                     setChangeQuestions(true);
                 }

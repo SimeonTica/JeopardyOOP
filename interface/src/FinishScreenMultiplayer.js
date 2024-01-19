@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const FinishScreenMultiplayer = ({score, setCard, name, roomNumber}) => {
     
-    let {data: scores, loading, error} = useFetch("http://0.0.0.0:8080/multiplayer/finish/" + roomNumber);
+    let {data: scores, loading, error} = useFetch("http://localhost:8080/multiplayer/finish/" + roomNumber);
     
     const [players, setPlayers] = useState(null);
 

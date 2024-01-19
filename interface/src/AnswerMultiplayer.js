@@ -8,10 +8,10 @@ const AnswerMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions,
     let ans = intrebare.correct;    
     let raspuns;
 
-    let {message: data} = useFetchPost("http://0.0.0.0:8080/multiplayer/question/1/" + roomNumber, intrebare);
-    let {message: data1} = useFetchPost("http://0.0.0.0:8080/multiplayer/question/2/" + roomNumber, intrebare);
+    let {message: data} = useFetchPost("http://localhost:8080/multiplayer/question/1/" + roomNumber, intrebare);
+    let {message: data1} = useFetchPost("http://localhost:8080/multiplayer/question/2/" + roomNumber, intrebare);
 
-    useFetchPost("http://0.0.0.0:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+    useFetchPost("http://localhost:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
     useEffect(() => {
         if(fetchOtherQuestions === false && data != null){
@@ -38,7 +38,7 @@ const AnswerMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions,
 
     const handleOnClick = async () => {
         setRenderQuestion(false);
-        fetch("http://0.0.0.0:8080/multiplayer/turn/changeTurn/" + roomNumber).then(data => data.json());
+        fetch("http://localhost:8080/multiplayer/turn/changeTurn/" + roomNumber).then(data => data.json());
         setCard("Score: " + score);
         setChangeTurn(true);
     }

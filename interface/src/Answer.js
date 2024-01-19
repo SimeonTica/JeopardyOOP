@@ -10,7 +10,7 @@ let raspuns;
 let time = setTimeLeft
 let data, finalPoints;
 
-useFetchPost("http://0.0.0.0:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+useFetchPost("http://localhost:8080/score/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
 useEffect(() => {
     setQuestions(data);
@@ -21,7 +21,7 @@ useEffect(() => {
         let response;
         let responsePoints;
         if(finished === -1)
-            response = await fetch("http://0.0.0.0:8080/question/1/" + playerName, {
+            response = await fetch("http://localhost:8080/question/1/" + playerName, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ useEffect(() => {
                 body: JSON.stringify(intrebare),
             });
         else
-            response = await fetch("http://0.0.0.0:8080/question/2/" + playerName, {
+            response = await fetch("http://localhost:8080/question/2/" + playerName, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,9 +39,9 @@ useEffect(() => {
         data = await response.json();
         setQuestions(data);
         if(finished === -1)
-            responsePoints = await fetch("http://0.0.0.0:8080/score/1/" + playerName);
+            responsePoints = await fetch("http://localhost:8080/score/1/" + playerName);
         else
-            responsePoints = await fetch("http://0.0.0.0:8080/score/2/" + playerName);
+            responsePoints = await fetch("http://localhost:8080/score/2/" + playerName);
 
         finalPoints = await responsePoints.json();
         if(finished === -1)
@@ -66,7 +66,7 @@ if(ans ==="TRUE"){
     raspuns = "Good job!";
 }
 else if(time === 0)
-    raspuns = " Time Runned out";
+    raspuns = " Time Ran out";
 else 
     raspuns = "Wrong answer";
 
