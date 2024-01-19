@@ -23,12 +23,14 @@ class Questions : public ReadCSV {
 private:
 	int questionCount = 1;
 
-	json questionsToSend;
-	json questionCategories;
+	json questionsToSend1;
+	json questionsToSend2;
+	json questionCategories1;
 
-	std::vector<std::string> stringQuestions;
+	std::vector<std::string> stringQuestions1;
+	std::vector<std::string> stringQuestions2;
 	std::vector<std::string> stringCategories;
-	std::vector<std::string> categories{"category 1", "category 2", "category 3", "category 4", "category 5"};
+	std::vector<std::string> categories{"Level 3", "Level 4", "Level 5"};
 
 	std::vector<int> generateRandomCategories();
 	int generateRandomNumberInInterval(int a, int b);
@@ -49,4 +51,8 @@ public:
 	void convertQuestionCategories();
 	json getQuestionsToSend();
 	json getCategoriesToSend();
+
+	void changeQuestionWithClientResponse1(const json& q);
+	void convertQuestions1();
+	json getQuestionsToSend1();
 };

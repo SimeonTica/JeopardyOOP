@@ -207,7 +207,15 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 
                 room["stop"] = "yes";
 
-                std::cout << "stop" << std::endl;
+                for (auto u : turn)
+                    if (u.second == player["room"])
+                        u.first->send_text(room.dump(4));
+
+            }
+
+            if (whichRoom != -1 && player["req"] == "change") {
+
+                room["change"] = "yes";
 
                 for (auto u : turn)
                     if (u.second == player["room"])
@@ -236,7 +244,7 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 
                 });
 
-        CROW_ROUTE(app, "/multiplayer/questions/<string>")
+        CROW_ROUTE(app, "/multiplayer/questions/1/<string>")
         .methods("GET"_method)
         ([&](std::string roomId) {
 
@@ -245,6 +253,21 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
         if (roomNumber != -1) {
 
 			json data = rooms[roomNumber].questions.getQuestionsToSend();
+
+			return crow::response(data.dump(4));
+		}
+            
+            });
+
+        CROW_ROUTE(app, "/multiplayer/questions/2/<string>")
+        .methods("GET"_method)
+        ([&](std::string roomId) {
+
+        int roomNumber = checkWhichRoom(roomId);
+
+        if (roomNumber != -1) {
+
+			json data = rooms[roomNumber].questions.getQuestionsToSend1();
 
 			return crow::response(data.dump(4));
 		}
@@ -266,7 +289,7 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 
             });
 
-        CROW_ROUTE(app, "/multiplayer/score/<string>/<string>")
+        CROW_ROUTE(app, "/multiplayer/score/1/<string>/<string>")
         .methods("GET"_method)
         ([&](std::string roomNumber, std::string player) {
 
@@ -286,8 +309,6 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 
                     points["points"] = playersInRoom[playerPos].get_score();
 
-                    std::cout << playersInRoom[playerPos].get_score() << std::endl;
-
                     return crow::response(points.dump(4));
                 }
                 else {
@@ -300,6 +321,39 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 
         }
             });
+
+        CROW_ROUTE(app, "/multiplayer/score/2/<string>/<string>")
+        .methods("GET"_method)
+        ([&](std::string roomNumber, std::string player) {
+
+        int room = checkWhichRoom(roomNumber);
+
+        if (room != -1) {
+
+            int playerPos = rooms[room].checkPlayerPosition(player);
+
+            if (playerPos != -1) {  
+
+                if (checkStatus1(rooms[room].questions) == true) {
+
+                    json points;
+
+                    std::vector<Player> playersInRoom = rooms[room].getPlayers();
+
+                    points["points"] = playersInRoom[playerPos].get_score();
+
+                    return crow::response(points.dump(4));
+                }
+                else {
+                    json points;
+                    points["points"] = -1;
+
+                    return crow::response(points.dump(4));
+                }
+            }
+
+        }
+            });        
 
         CROW_ROUTE(app, "/multiplayer/score/<string>/<string>")
         .methods("POST"_method)
@@ -326,7 +380,7 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
 		}
 			});
 
-        CROW_ROUTE(app, "/multiplayer/question/<string>")
+        CROW_ROUTE(app, "/multiplayer/question/1/<string>")
         .methods("POST"_method)
         ([&](const crow::request& req, std::string roomNumber) {
 
@@ -345,30 +399,50 @@ void Multiplayer::startRoutes(crow::App<crow::CORSHandler>& app) {
         }
             });
 
+        CROW_ROUTE(app, "/multiplayer/question/2/<string>")
+        .methods("POST"_method)
+        ([&](const crow::request& req, std::string roomNumber) {
+
+        int room = checkWhichRoom(roomNumber);
+
+        if (room != -1) {
+
+            std::cout << req.body << std::endl;
+
+            json request = json::parse(req.body);
+            rooms[room].questions.changeQuestionWithClientResponse1(request);
+            json data = rooms[room].questions.getQuestionsToSend1();
+
+            return crow::response(data.dump(4));
+
+        }
+            });
+
         CROW_ROUTE(app, "/multiplayer/finish/<string>")
-            .methods("POST"_method)
-            ([&](const crow::request& req, std::string roomNumber) {
+            .methods("GET"_method)
+            ([&](const std::string roomNumber) {
 
             int room = checkWhichRoom(roomNumber);
 
             if (room != -1) {
 
+                json player;    
+                std::vector<json> vectorResponse;
                 json response;
-                json request = json::parse(req.body);
-                
+
                 std::vector<Player> playersInRoom = rooms[room].getPlayers();
 
                 for (int i = 0; i < playersInRoom.size(); i++)
                 {
-                    response[playersInRoom[i].get_nickname()] = playersInRoom[i].get_score();
+                    player["player"] = playersInRoom[i].get_nickname();
+                    player["score"] = playersInRoom[i].get_score();
+                    vectorResponse.push_back(player);
+                    player.clear();
                 }
-                if (request["finish"] == 1) {
 
-                    rooms.erase(rooms.begin() + room);
-                }
+                response["players"] = vectorResponse;
 
                 return crow::response(response.dump(4));
-
             }
                 });
 }
@@ -387,14 +461,30 @@ int Multiplayer::checkWhichRoom(std::string roomId) {
 
 bool Multiplayer::checkStatus(Questions questions) {
 
-    for (int i = 0; i < questions.stringQuestions.size(); i++)
+    for (int i = 0; i < questions.stringQuestions1.size(); i++)
     {
-        jsonQuestion quest = questions.stringToStruct(questions.stringQuestions[i]);
+        jsonQuestion quest = questions.stringToStruct(questions.stringQuestions1[i]);
         if (quest.render == "TRUE") {
+            std::cout << "false" << std::endl;
+            return false;
+        }
+        std::cout << "true" << std::endl;
+    }
+
+    return true;
+}
+
+bool Multiplayer::checkStatus1(Questions questions) {
+
+    for (int i = 0; i < questions.stringQuestions2.size(); i++)
+    {
+        jsonQuestion quest = questions.stringToStruct(questions.stringQuestions2[i]);
+        if (quest.render == "TRUE") {
+            std::cout << "false" << std::endl;
             return false;
         }
     }
-
+    std::cout << "true" << std::endl;
     return true;
 }
 

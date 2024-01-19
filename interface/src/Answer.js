@@ -3,7 +3,7 @@ import useFetchPost from "./useFetchPost";
 import useFetch from "./useFetch";
 import { useEffect } from "react";
 
-const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished,setTimeLeft}) => {
+const Answer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished, setTimeLeft, finished, setFinishedBoth}) => {
 
 let ans = intrebare.correct;
 let raspuns;
@@ -18,19 +18,36 @@ useEffect(() => {
 
 useEffect(() => {
     const fetchData = async () => {
-        let response = await fetch("http://0.0.0.0:8080/question/" + playerName, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(intrebare),
-        });
+        let response;
+        let responsePoints;
+        if(finished === -1)
+            response = await fetch("http://0.0.0.0:8080/question/1/" + playerName, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(intrebare),
+            });
+        else
+            response = await fetch("http://0.0.0.0:8080/question/2/" + playerName, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(intrebare),
+            });
         data = await response.json();
         setQuestions(data);
+        if(finished === -1)
+            responsePoints = await fetch("http://0.0.0.0:8080/score/1/" + playerName);
+        else
+            responsePoints = await fetch("http://0.0.0.0:8080/score/2/" + playerName);
 
-        let responsePoints = await fetch("http://0.0.0.0:8080/score/" + playerName);
         finalPoints = await responsePoints.json();
-        setFinished(finalPoints.points);
+        if(finished === -1)
+            setFinished(finalPoints.points);
+        else
+            setFinishedBoth(finalPoints.points);
     };
 
     fetchData();

@@ -76,12 +76,15 @@
         color: #F0A60C;
     }
     .timer{
-        max-width: 15%;
-        color:white;
+        max-width: 30%;
+        color:#D0B7F9;
         margin: 30px auto;
         font-style: italic;
         align-items: center;
         font-weight: 600;
+        cursor: default;
+        background-image: none;
+        font-size: 50px;
     }
 
 }

@@ -1,6 +1,6 @@
 .finish{
     font-size: 50px;
-    color: #D0B7F9;
+    color: #d0b7f9;
     margin-bottom: 100px;
 }
 .finish span{
@@ -17,15 +17,17 @@
     justify-content: center;
 }
 .card.player{
-    max-width: 10%;
+    max-width: 20%;
     padding : 30px 60px;
-    color:white;
-    margin :0px;
+    color:#F0A60C;
+    margin: 0px;
     margin: auto;
     font-style: italic;
     align-items: center;
     cursor:default;
     font-weight: 600;
+    background-image: none;
+    background-color: rgba(207, 283, 249, 0.32);
 }
 .buttons.finish{
     margin-top: 0px;

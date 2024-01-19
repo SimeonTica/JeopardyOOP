@@ -3,34 +3,45 @@ import useFetchPost from "./useFetchPost";
 import useFetch from "./useFetch";
 import { useEffect, useRef } from "react";
 
-const AnswerMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, roomNumber, setChangeTurn,timeLeft}) => {
-let ans = intrebare.correct;    
-let raspuns;
+const AnswerMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, roomNumber, setChangeTurn, timeLeft, fetchOtherQuestions}) => {
 
-let {message: data} = useFetchPost("http://0.0.0.0:8080/multiplayer/question/" + roomNumber, intrebare);
-let {data: finalPoints} = useFetch("http://0.0.0.0:8080/multiplayer/score/" + roomNumber + "/" + playerName);
+    let ans = intrebare.correct;    
+    let raspuns;
 
-useFetchPost("http://0.0.0.0:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
+    let {message: data} = useFetchPost("http://0.0.0.0:8080/multiplayer/question/1/" + roomNumber, intrebare);
+    let {message: data1} = useFetchPost("http://0.0.0.0:8080/multiplayer/question/2/" + roomNumber, intrebare);
 
-useEffect(() => {
-    setQuestions(data);
-}, [data]);
+    useFetchPost("http://0.0.0.0:8080/multiplayer/score/" + roomNumber + "/" + playerName, ans === "TRUE" ? intrebare.punctaj : 0)
 
-useEffect(() => {
+    useEffect(() => {
+        if(fetchOtherQuestions === false && data != null){
 
-    if(ans === "TRUE"){
-    
-        let newScore = parseInt(score) + parseInt(intrebare.punctaj);
-        setScore(newScore);
+            setQuestions(data);
+        }
+    }, [data]);
+
+    useEffect(() => {
+        if(fetchOtherQuestions === true && data1 != null){
+
+            setQuestions(data1);
+        }
+    }, [data1]);
+
+    useEffect(() => {
+
+        if(ans === "TRUE"){
+        
+            let newScore = parseInt(score) + parseInt(intrebare.punctaj);
+            setScore(newScore);
+        }
+    }, []);
+
+    const handleOnClick = async () => {
+        setRenderQuestion(false);
+        fetch("http://0.0.0.0:8080/multiplayer/turn/changeTurn/" + roomNumber).then(data => data.json());
+        setCard("Score: " + score);
+        setChangeTurn(true);
     }
-}, []);
-
-const handleOnClick = async () => {
-    setRenderQuestion(false);
-    let status = fetch("http://0.0.0.0:8080/multiplayer/turn/changeTurn/" + roomNumber).then(data => data.json());
-    setCard("Score: " + score);
-    setChangeTurn(true);
-}
 
 
     if(ans ==="TRUE"){

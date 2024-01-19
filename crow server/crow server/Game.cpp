@@ -20,6 +20,7 @@ void Game::startGame() {
 
         questions.extractQuestionsAndCategories();
         questions.convertQuestions();
+        questions.convertQuestions1();
         questions.convertQuestionCategories();
         player.set_nickname(pName);
         player.set_score(0);

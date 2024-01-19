@@ -3,13 +3,13 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 1;
+    z-index: -10;
 }
 .lowerDots{
     position: absolute;
     bottom: 10px;
     right: 10px; 
-    z-index: 1;
+    z-index: -10;
 }
 .buttonsWrapper{
     background-color: rgba(255, 255, 255, 0.2);
@@ -20,4 +20,7 @@
 }
 .center{
     text-align: center !important;
+}
+.content{
+    z-index: -100;
 }

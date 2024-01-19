@@ -20,6 +20,8 @@ private:
 
 
 	bool checkStatus(Questions questions);
+	bool checkStatus1(Questions questions);
+
 	int checkWhichRoom(std::string roomId);
 	void changeTurn(std::string roomId);
 

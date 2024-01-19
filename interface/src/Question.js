@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './styles/Question.css';
 import Answer from './Answer';
 
-const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished}) => {
+const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished, finished, setFinishedBoth}) => {
 
     const [answered, setAnswered] = useState(false);
     const [timeLeft, setTimeLeft] = useState(10);
@@ -46,7 +46,7 @@ const Question = ({intrebare, setRenderQuestion, setCard, setQuestions, playerNa
                 </div>
             </div>
         :
-            <Answer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished } setTimeLeft={timeLeft}/>
+            <Answer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } setFinished = { setFinished } setTimeLeft={timeLeft} finished = {finished} setFinishedBoth = {setFinishedBoth}/>
      );
 }
  

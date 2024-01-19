@@ -18,12 +18,12 @@ int Questions::generateRandomNumberInInterval(int a, int b) {
 std::vector<int> Questions::generateRandomCategories() {
 
     int i = 0;
-    int v[] = {0,0,0,0,0,0};
+    int v[] = {0,0,0,0};
     std::vector<int> ans;
 
-    while (i < 5) {
+    while (i < 3) {
 
-        int dis = generateRandomNumberInInterval(1, 5) - 1;
+        int dis = generateRandomNumberInInterval(1, 3) - 1;
 
         if (v[dis] == 0) {
 
@@ -50,35 +50,60 @@ std::string Questions::pickOneQuestion(std::string file) {
 void Questions::extractQuestionsAndCategories() {
 	
     stringCategories.clear();
-    stringQuestions.clear();
+    stringQuestions1.clear();
+    stringQuestions2.clear();
 
     std::vector<int> ans = generateRandomCategories();
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        std::string file = "./questions/" + categories[ans[i]] + "/";
-        stringQuestions.push_back(pickOneQuestion(file + "250.csv"));
+        std::string file = "./questions/Modules/Modul 7/" + categories[ans[i]] + "/";
+        stringQuestions1.push_back(pickOneQuestion(file + "250.csv"));
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        std::string file = "./questions/" + categories[ans[i]] + "/";
-        stringQuestions.push_back(pickOneQuestion(file + "500.csv"));
+        std::string file = "./questions/Modules/Modul 7/" + categories[ans[i]] + "/";
+        stringQuestions1.push_back(pickOneQuestion(file + "500.csv"));
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        std::string file = "./questions/" + categories[ans[i]] + "/";
-        stringQuestions.push_back(pickOneQuestion(file + "750.csv"));
+        std::string file = "./questions/Modules/Modul 7/" + categories[ans[i]] + "/";
+        stringQuestions1.push_back(pickOneQuestion(file + "750.csv"));
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
     {
-        std::string file = "./questions/" + categories[ans[i]] + "/";
-        stringQuestions.push_back(pickOneQuestion(file + "1000.csv"));
+        std::string file = "./questions/Modules/Modul 7/" + categories[ans[i]] + "/";
+        stringQuestions1.push_back(pickOneQuestion(file + "1000.csv"));
     }
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 3; i++)
+    {
+        std::string file = "./questions/Modules/Modul 8/" + categories[ans[i]] + "/";
+        stringQuestions2.push_back(pickOneQuestion(file + "250.csv"));
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        std::string file = "./questions/Modules/Modul 8/" + categories[ans[i]] + "/";
+        stringQuestions2.push_back(pickOneQuestion(file + "500.csv"));
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        std::string file = "./questions/Modules/Modul 8/" + categories[ans[i]] + "/";
+        stringQuestions2.push_back(pickOneQuestion(file + "750.csv"));
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        std::string file = "./questions/Modules/Modul 8/" + categories[ans[i]] + "/";
+        stringQuestions2.push_back(pickOneQuestion(file + "1000.csv"));
+    }
+
+    for (int i = 0; i < 3; i++)
     {
         stringCategories.push_back(categories[ans[i]]);
     }
@@ -93,17 +118,44 @@ void Questions::changeQuestionWithClientResponse(const json& q) {
     std::string token;
     std::getline(ss, token, '\t');
 
-    for (int i = 0; i < stringQuestions.size(); i++)
+    for (int i = 0; i < stringQuestions1.size(); i++)
     {
-        std::stringstream ssq(stringQuestions[i]);
+        std::stringstream ssq(stringQuestions1[i]);
 
         std::string tokenq;
         std::getline(ssq, tokenq, '\t');
 
         if (tokenq == token) {
 
-            stringQuestions[i] = line;
-                convertQuestions();
+            stringQuestions1[i] = line;
+            convertQuestions();
+            convertQuestionCategories();
+            break;
+        }
+    }
+
+}
+
+void Questions::changeQuestionWithClientResponse1(const json& q) {
+
+    std::string line = StructToString(from_json(q)); 
+
+    std::stringstream ss(line);
+
+    std::string token;
+    std::getline(ss, token, '\t');
+
+    for (int i = 0; i < stringQuestions2.size(); i++)
+    {
+        std::stringstream ssq(stringQuestions2[i]);
+
+        std::string tokenq;
+        std::getline(ssq, tokenq, '\t');
+
+        if (tokenq == token) {
+
+            stringQuestions2[i] = line;
+            convertQuestions1();
             convertQuestionCategories();
             break;
         }
@@ -126,9 +178,8 @@ jsonQuestion Questions::stringToStruct(const std::string line) {
     while (std::getline(ss, token, '\t')){
         columns.push_back(token);
     }
-    std::cout << "columns: " << columns.size() << "\n";
+
     q.intrebare = columns[0];
-    std::cout << "works\n";
     q.punctaj = columns[1];
     q.rasp.push_back(columns[2]);
     q.rasp.push_back(columns[3]);
@@ -159,8 +210,6 @@ std::string Questions::StructToString(jsonQuestion q) {
     line += q.id + "\t";
     line += q.render + "\t";
     line += q.correct;
-
-    std::cout << "line: " << line << "\n";
 
     return line;
 }
@@ -207,12 +256,23 @@ void Questions::convertQuestions() {
 
     std::vector<json> jsonVector;
 
-    for (int i = 0; i < stringQuestions.size(); i++)
+    for (int i = 0; i < stringQuestions1.size(); i++)
     {
-        jsonVector.push_back(to_json(stringToStruct(stringQuestions[i])));
+        jsonVector.push_back(to_json(stringToStruct(stringQuestions1[i])));
     }
 
-    questionsToSend = jsonVector;
+    questionsToSend1 = jsonVector;
+}
+
+void Questions::convertQuestions1() {
+
+    std::vector<json> jsonVector;
+    for (int i = 0; i < stringQuestions2.size(); i++)
+    {
+        jsonVector.push_back(to_json(stringToStruct(stringQuestions2[i])));
+    }
+
+    questionsToSend2 = jsonVector;
 }
 
 void Questions::convertQuestionCategories() {
@@ -224,17 +284,23 @@ void Questions::convertQuestionCategories() {
         jsonVector.push_back({ {"category", stringCategories[i]}, {"id", i + 1}});
     }
 
-    questionCategories = jsonVector;
+    questionCategories1 = jsonVector;
 }
 
 json Questions::getQuestionsToSend() {
 
-    return questionsToSend;
+    return questionsToSend1;
+
+}
+
+json Questions::getQuestionsToSend1() {
+
+    return questionsToSend2;
 
 }
 
 json Questions::getCategoriesToSend() {
 
-    return questionCategories;
+    return questionCategories1;
 
 }

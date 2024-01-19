@@ -13,6 +13,7 @@ private:
 
 	int checkWhichPlayer(std::string pl);
 	bool checkStatus(Questions questions);
+	bool checkStatus1(Questions questions);
 
 public:
 	void startRoutes(crow::App<crow::CORSHandler>& app);

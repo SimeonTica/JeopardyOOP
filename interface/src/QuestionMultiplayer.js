@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './styles/Question.css';
 import AnswerMultiplayer from './AnswerMultiplayer';
 
-const QuestionMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished, roomNumber, setChangeTurn}) => {
+const QuestionMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestions, playerName, score, setScore, setFinished, roomNumber, setChangeTurn, fetchOtherQuestions}) => {
 
     const [answered, setAnswered] = useState(false);
     const [timeLeft, setTimeLeft] = useState(240);
@@ -45,7 +45,7 @@ const QuestionMultiplayer = ({intrebare, setRenderQuestion, setCard, setQuestion
                 </div>
             </div>
         :
-            <AnswerMultiplayer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } timeLeft={timeLeft}/>
+            <AnswerMultiplayer intrebare = { intrebare } setRenderQuestion = {setRenderQuestion} setCard = {setCard} setQuestions = { setQuestions } playerName = { playerName } score = { score } setScore = { setScore } roomNumber = { roomNumber } setChangeTurn= { setChangeTurn } timeLeft={timeLeft} fetchOtherQuestions = { fetchOtherQuestions }/>
      );
 }
  

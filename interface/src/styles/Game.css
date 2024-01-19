@@ -74,7 +74,7 @@
     }
     .card-container{
         display: grid;
-        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-columns: 33% 33% 33%;
         padding: 20px;
     }
     .card{
@@ -99,8 +99,13 @@
     .top-text{
         color: #D0B7F9;
         text-align: center;
-        padding: 30px 0;
+        padding: 10px;
+        padding-top: 0px;
         font-size: 50px;
+    }
+    .top-text.module{
+        padding-bottom: 0px;
+        color: #F0A60C;
     }
     .back-home{
         text-decoration: none;

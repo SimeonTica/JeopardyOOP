@@ -5,6 +5,7 @@ Room::Room() {
 
 	questions.extractQuestionsAndCategories();
 	questions.convertQuestions();
+	questions.convertQuestions1();
 	questions.convertQuestionCategories();
 }
 
